@@ -480,6 +480,13 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/permissions/com.oneplus.software.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/com.oneplus.software.xml \
     $(LOCAL_PATH)/configs/permissions/com.oneplus.software.overseas.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/com.oneplus.software.overseas.xml
 
+PRODUCT_PACKAGES += \
+    OnePlusIconShapeCircleOverlay \
+    OnePlusIconShapeRoundedRectOverlay \
+    OnePlusIconShapeSquareOverlay \
+    OnePlusIconShapeSquircleOverlay \
+    OnePlusIconShapeTeardropOverlay
+
 # Wifi
 PRODUCT_PACKAGES += \
     android.hardware.wifi@1.0-service \
