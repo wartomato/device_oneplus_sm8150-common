@@ -208,20 +208,6 @@ PRODUCT_PACKAGES += \
     vendor.oem_ftm.rc \
     vendor.oem_ftm_svc_disable.rc \
 
-# AICP device specific init scripts
-ifeq ($(TARGET_DEVICE),$(filter $(TARGET_DEVICE),hotdog))
-PRODUCT_PACKAGES += \
-    init.aicp-hotdog.rc
-endif
-ifeq ($(TARGET_DEVICE),$(filter $(TARGET_DEVICE),guacamole))
-PRODUCT_PACKAGES += \
-    init.aicp-guacamole.rc
-endif
-ifeq ($(TARGET_DEVICE),$(filter $(TARGET_DEVICE),guacamoleb))
-PRODUCT_PACKAGES += \
-    init.aicp-guacamoleb.rc
-endif
-
 # Cryptfshw
 PRODUCT_PACKAGES += \
     vendor.qti.hardware.cryptfshw@1.0.vendor
