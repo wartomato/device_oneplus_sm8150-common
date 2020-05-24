@@ -1,2 +1,0 @@
-# Allow Gcam access to the persist_camera_prop for AUX support
-allow persist_camera_prop file { read open getattr map }
