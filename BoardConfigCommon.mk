@@ -104,7 +104,10 @@ BOARD_CHARGER_ENABLE_SUSPEND := true
 # CNE and DPM
 BOARD_USES_QCNE := true
 
-# Dexpreopt
+# FOD
+TARGET_SURFACEFLINGER_FOD_LIB := //$(VENDOR_PATH):libfod_extension.oneplus_msmnile
+
+# Dex
 ifeq ($(HOST_OS),linux)
   ifneq ($(TARGET_BUILD_VARIANT),eng)
     WITH_DEXPREOPT := true

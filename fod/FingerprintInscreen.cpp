@@ -33,11 +33,6 @@
 #define OP_DISPLAY_NOTIFY_PRESS 9
 #define OP_DISPLAY_SET_DIM 10
 
-// This is not a typo by me. It's by OnePlus.
-#define HBM_ENABLE_PATH "/sys/class/drm/card0-DSI-1/op_friginer_print_hbm"
-#define HBM_MODE_PATH "/sys/class/drm/card0-DSI-1/hbm"
-#define DIM_AMOUNT_PATH "/sys/class/drm/card0-DSI-1/dim_alpha"
-
 namespace vendor {
 namespace lineage {
 namespace biometrics {
@@ -84,16 +79,12 @@ Return<void> FingerprintInscreen::onFinishEnroll() {
 }
 
 Return<void> FingerprintInscreen::onPress() {
-    this->mVendorDisplayService->setMode(OP_DISPLAY_AOD_MODE, 2);
-    this->mVendorDisplayService->setMode(OP_DISPLAY_SET_DIM, 1);
     this->mVendorDisplayService->setMode(OP_DISPLAY_NOTIFY_PRESS, 1);
 
     return Void();
 }
 
 Return<void> FingerprintInscreen::onRelease() {
-    this->mVendorDisplayService->setMode(OP_DISPLAY_AOD_MODE, 0);
-    this->mVendorDisplayService->setMode(OP_DISPLAY_SET_DIM, 0);
     this->mVendorDisplayService->setMode(OP_DISPLAY_NOTIFY_PRESS, 0);
 
     return Void();
@@ -101,13 +92,13 @@ Return<void> FingerprintInscreen::onRelease() {
 
 Return<void> FingerprintInscreen::onShowFODView() {
     this->mFodCircleVisible = true;
+    this->mVendorDisplayService->setMode(OP_DISPLAY_SET_DIM, 1);
 
     return Void();
 }
 
 Return<void> FingerprintInscreen::onHideFODView() {
     this->mFodCircleVisible = false;
-    this->mVendorDisplayService->setMode(OP_DISPLAY_AOD_MODE, 0);
     this->mVendorDisplayService->setMode(OP_DISPLAY_SET_DIM, 0);
     this->mVendorDisplayService->setMode(OP_DISPLAY_NOTIFY_PRESS, 0);
 
@@ -153,24 +144,7 @@ Return<void> FingerprintInscreen::setLongPressEnabled(bool enabled) {
 }
 
 Return<int32_t> FingerprintInscreen::getDimAmount(int32_t) {
-    int dimAmount = get(DIM_AMOUNT_PATH, 0);
-    int hbmMode = get(HBM_MODE_PATH, 0);
-    int retry = 0;
-
-    // Always return 42 for hbm mode(670)
-    if (hbmMode == 5) {
-        dimAmount = 42;
-    }
-
-    // To avoid race condition between light hal and fod
-    while (dimAmount == 255 && retry < 10000) {
-        dimAmount = get(DIM_AMOUNT_PATH, 0);
-        retry++;
-    }
-
-    LOG(INFO) << "dimAmount = " << dimAmount;
-
-    return dimAmount;
+    return 0;
 }
 
 Return<bool> FingerprintInscreen::shouldBoostBrightness() {
