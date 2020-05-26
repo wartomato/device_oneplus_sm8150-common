@@ -33,6 +33,11 @@
 #define OP_DISPLAY_NOTIFY_PRESS 9
 #define OP_DISPLAY_SET_DIM 10
 
+// This is not a typo by me. It's by OnePlus.
+#define HBM_ENABLE_PATH "/sys/class/drm/card0-DSI-1/op_friginer_print_hbm"
+#define HBM_MODE_PATH "/sys/class/drm/card0-DSI-1/hbm"
+#define DIM_AMOUNT_PATH "/sys/class/drm/card0-DSI-1/dim_alpha"
+
 namespace vendor {
 namespace lineage {
 namespace biometrics {
@@ -40,30 +45,6 @@ namespace fingerprint {
 namespace inscreen {
 namespace V1_1 {
 namespace implementation {
-
-constexpr std::array<std::pair<uint32_t, uint32_t>, 21> BRIGHTNESS_ALPHA_LUT = {
-    std::make_pair(0, 0xff),
-    std::make_pair(1, 0xf1),
-    std::make_pair(2, 0xec),
-    std::make_pair(4, 0xeb),
-    std::make_pair(5, 0xea),
-    std::make_pair(6, 0xe8),
-    std::make_pair(10, 0xe4),
-    std::make_pair(20, 0xdc),
-    std::make_pair(30, 0xd4),
-    std::make_pair(45, 0xcc),
-    std::make_pair(70, 0xbe),
-    std::make_pair(100, 0xb3),
-    std::make_pair(150, 0xa6),
-    std::make_pair(227, 0x90),
-    std::make_pair(300, 0x83),
-    std::make_pair(400, 0x70),
-    std::make_pair(500, 0x60),
-    std::make_pair(600, 0x53),
-    std::make_pair(800, 0x3c),
-    std::make_pair(1023, 0x22),
-    std::make_pair(2000, 0x83),
-};
 
 /*
  * Write value to path and close file.
@@ -81,41 +62,6 @@ static T get(const std::string& path, const T& def) {
 
     file >> result;
     return file.fail() ? def : result;
-}
-
-int interpolate(int x, int xa, int xb, int ya, int yb) {
-    int bf = 2 * (yb - ya) * (x - xa) / (xb - xa);
-    int factor = bf / 2;
-    int plus = bf % 2;
-    int sub = 0;
-
-    if ((xa - xb) && (yb - ya)) {
-        sub = 2 * (x - xa) * (x - xb) / (yb - ya) / (xa - xb);
-    }
-
-    return ya + factor + plus + sub;
-}
-
-int brightness_to_alpha(int brightness) {
-    int i = 0;
-
-    for (; i < BRIGHTNESS_ALPHA_LUT.size(); i++) {
-        if (BRIGHTNESS_ALPHA_LUT[i].first >= brightness) {
-            break;
-        }
-    }
-
-    if (i == 0)
-        return BRIGHTNESS_ALPHA_LUT.front().second;
-
-    if (i == BRIGHTNESS_ALPHA_LUT.size())
-        return BRIGHTNESS_ALPHA_LUT.back().second;
-
-    return interpolate(brightness,
-            BRIGHTNESS_ALPHA_LUT[i - 1].first,
-            BRIGHTNESS_ALPHA_LUT[i].first,
-            BRIGHTNESS_ALPHA_LUT[i - 1].second,
-            BRIGHTNESS_ALPHA_LUT[i].second);
 }
 
 FingerprintInscreen::FingerprintInscreen() {
@@ -138,12 +84,16 @@ Return<void> FingerprintInscreen::onFinishEnroll() {
 }
 
 Return<void> FingerprintInscreen::onPress() {
+    this->mVendorDisplayService->setMode(OP_DISPLAY_AOD_MODE, 2);
+    this->mVendorDisplayService->setMode(OP_DISPLAY_SET_DIM, 1);
     this->mVendorDisplayService->setMode(OP_DISPLAY_NOTIFY_PRESS, 1);
 
     return Void();
 }
 
 Return<void> FingerprintInscreen::onRelease() {
+    this->mVendorDisplayService->setMode(OP_DISPLAY_AOD_MODE, 0);
+    this->mVendorDisplayService->setMode(OP_DISPLAY_SET_DIM, 0);
     this->mVendorDisplayService->setMode(OP_DISPLAY_NOTIFY_PRESS, 0);
 
     return Void();
@@ -151,13 +101,13 @@ Return<void> FingerprintInscreen::onRelease() {
 
 Return<void> FingerprintInscreen::onShowFODView() {
     this->mFodCircleVisible = true;
-    this->mVendorDisplayService->setMode(OP_DISPLAY_SET_DIM, 1);
 
     return Void();
 }
 
 Return<void> FingerprintInscreen::onHideFODView() {
     this->mFodCircleVisible = false;
+    this->mVendorDisplayService->setMode(OP_DISPLAY_AOD_MODE, 0);
     this->mVendorDisplayService->setMode(OP_DISPLAY_SET_DIM, 0);
     this->mVendorDisplayService->setMode(OP_DISPLAY_NOTIFY_PRESS, 0);
 
@@ -202,9 +152,21 @@ Return<void> FingerprintInscreen::setLongPressEnabled(bool enabled) {
     return Void();
 }
 
-Return<int32_t> FingerprintInscreen::getDimAmount(int32_t brightness) {
-    int realBrightness = brightness * 1023 / 255;
-    int dimAmount = (brightness_to_alpha(realBrightness) * 70) / 100;
+Return<int32_t> FingerprintInscreen::getDimAmount(int32_t) {
+    int dimAmount = get(DIM_AMOUNT_PATH, 0);
+    int hbmMode = get(HBM_MODE_PATH, 0);
+    int retry = 0;
+
+    // Always return 42 for hbm mode(670)
+    if (hbmMode == 5) {
+        dimAmount = 42;
+    }
+
+    // To avoid race condition between light hal and fod
+    while (dimAmount == 255 && retry < 10000) {
+        dimAmount = get(DIM_AMOUNT_PATH, 0);
+        retry++;
+    }
 
     LOG(INFO) << "dimAmount = " << dimAmount;
 
