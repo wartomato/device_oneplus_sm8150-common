@@ -80,10 +80,6 @@
 # Aicp
 /sys/kernel/fast_charge/force_fast_charge                                                                   u:object_r:sysfs_fastcharge:s0
 /sys/devices/platform/soc/89c000.i2c/i2c-2/2-005a/leds/vibrator/level                                       u:object_r:sysfs_vibrator:s0
-/sys/devices/platform/soc/89c000.i2c/i2c-2/2-005a/leds/vibrator/vmax_override                               u:object_r:sysfs_vibrator:s0
-/sys/devices/platform/soc/89c000.i2c/i2c-2/2-005a/leds/vibrator/vmax_mv_user                                u:object_r:sysfs_vibrator:s0
-/sys/devices/platform/soc/89c000.i2c/i2c-2/2-005a/leds/vibrator/vmax_mv_call                                u:object_r:sysfs_vibrator:s0
-/sys/devices/platform/soc/89c000.i2c/i2c-2/2-005a/leds/vibrator/vmax_mv_strong                              u:object_r:sysfs_vibrator:s0
 /sys/devices/platform/soc/ae00000\.qcom\,mdss_mdp/drm/card0/card0-DSI-1/native_display_srgb_color_mode      u:object_r:sysfs_dm:s0
 /sys/devices/platform/soc/ae00000\.qcom\,mdss_mdp/drm/card0/card0-DSI-1/hbm                                 u:object_r:sysfs_dm:s0
 /sys/devices/platform/soc/ae00000\.qcom\,mdss_mdp/drm/card0/card0-DSI-1/night_mode                          u:object_r:sysfs_dm:s0
