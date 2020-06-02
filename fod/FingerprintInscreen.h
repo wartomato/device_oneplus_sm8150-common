@@ -61,6 +61,7 @@ class FingerprintInscreen : public IFingerprintInscreen {
 
   private:
     bool mFodCircleVisible;
+    bool mIsEnrolling;
 
     sp<IOneplusDisplay> mVendorDisplayService;
     sp<IVendorFingerprintExtensions> mVendorFpService;
