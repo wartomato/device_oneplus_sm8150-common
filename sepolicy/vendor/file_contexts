@@ -69,6 +69,6 @@
 /sys/module/fsc(/.*)?                                              u:object_r:sysfs_fsc:s0
 /sys/module/stmvl53l1(/.*)?                                        u:object_r:sysfs_vl53l1:s0
 /sys/project_info(/.*)?                                            u:object_r:sysfs_project_info:s0
-/sys/kernel/fast_charge/force_fast_charge                          u:object_r:sysfs_fastcharge:s0
+
 /sys/kernel/gpu(/.*)?                                              u:object_r:sysfs_info:s0
 /sys/class/power_supply/battery/temp                               u:object_r:sysfs_info:s0
