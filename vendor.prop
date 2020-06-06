@@ -87,6 +87,7 @@ drm.service.enabled=true
 # Fingerprint
 persist.vendor.qfp=true
 persist.vendor.qfp.enable_fd=1
+persist.fod.night_mode_disabled=true
 
 # FRP
 ro.frp.pst=/dev/block/bootdevice/by-name/config
