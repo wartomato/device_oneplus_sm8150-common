@@ -1,4 +1,4 @@
-# All unpinned blobs below are extracted from OnePlus7ProOxygen_21.P.26_OTA_026_all_2003222032_6893aca031668
+# All unpinned blobs below are extracted from OnePlus7ProOxygen_21.E.26_OTA_026_all_2005192135_9ddcd6363e97e09
 
 # ADSP
 vendor/bin/adsprpcd
@@ -82,7 +82,7 @@ vendor/lib/libqtigef.so
 vendor/lib/libsurround_3mic_proc.so
 vendor/lib/soundfx/libasphere.so
 vendor/lib/soundfx/libhaptic_effect.so
-vendor/lib/soundfx/libqcbassboost.so|572d03f4566f3e08aeac948b9ef92817af243a39
+vendor/lib/soundfx/libqcbassboost.so|73ee788fec052bcc4ba55442e3b9f6a4eb97d34f
 vendor/lib/soundfx/libqcreverb.so
 vendor/lib/soundfx/libqcvirt.so
 vendor/lib/soundfx/libshoebox.so
@@ -144,6 +144,8 @@ product/lib64/libaptX_encoder.so|df1c89d7af1bb35808d5fe3496b04ba066c10cbc
 product/lib64/libaptXHD_encoder.so|e13fa70c97caaa24d061678bdee608eb8850a69e
 
 # Camera
+lib/vendor.oneplus.camera.CameraMDMHIDL@1.0.so
+lib64/vendor.oneplus.camera.CameraMDMHIDL@1.0.so
 vendor/bin/hw/vendor.oneplus.camera.CameraHIDL@1.0-service
 vendor/bin/vl53l1_daemon_main
 vendor/etc/camera/arccali.bin
@@ -1038,7 +1040,7 @@ vendor/etc/init/android.hardware.neuralnetworks@1.2-service-qti.rc
 vendor/lib64/libhexagon_nn_stub.so
 
 # NFC
--app/NxpNfcNci/NxpNfcNci.apk|f349310c6b67ad1d7c7a6b58be3ff686481d0e96
+-app/NxpNfcNci/NxpNfcNci.apk|1323581cb98ce3f0bf5d61a846aaf58f88a882c6
 -app/NxpSecureElement/NxpSecureElement.apk
 etc/nfcee_access.xml
 etc/permissions/com.nxp.nfc.xml
