@@ -370,6 +370,7 @@ vendor/lib64/libtriplecam_video_optical_zoom.so
 vendor/lib64/libvidhance.so
 vendor/lib64/libvl53l1_daemon.so
 vendor/lib64/sensors.hal.tof.so
+-app/priv-app/OnePlusCameraService/OnePlusCameraService.apk|ebcc0dce8222a355bf9caf1e8aa6be763e311d8a
 
 # Camera firmware
 vendor/firmware/CAMERA_ICP.elf
@@ -553,6 +554,11 @@ vendor/lib64/vendor.display.color@1.0.so
 vendor/lib64/vendor.display.color@1.1.so
 vendor/lib64/vendor.display.color@1.2.so
 vendor/lib64/vendor.display.postproc@1.0.so
+
+# Dolby
+-app/OPSoundTuner/OPSoundTuner.apk|9da7f711585d9a4bb0f91b72c3a41f3c1e44cbab
+-priv-app/daxService/daxService.apk
+etc/permissions/com.dolby.daxservice.xml
 
 # DPM
 product/bin/dpmd
