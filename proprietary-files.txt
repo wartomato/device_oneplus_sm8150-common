@@ -12,8 +12,7 @@ vendor/lib64/libadsprpc.so
 vendor/lib64/libmdsprpc.so
 
 # ADSP Modules
-vendor/lib/rfsa/adsp/capi_v2_aptX_Classic.so
-vendor/lib/rfsa/adsp/capi_v2_aptX_HD.so
+vendor/lib/rfsa/adsp/capi_v2_aptX_CLHDAD_Encoder.so
 vendor/lib/rfsa/adsp/libapps_mem_heap.so
 vendor/lib/rfsa/adsp/libarcsoft_dualcam_refocus_skel.so
 vendor/lib/rfsa/adsp/libarcsoft_hdrplus_hvx_skel.so
@@ -144,8 +143,12 @@ product/lib64/libaptX_encoder.so|df1c89d7af1bb35808d5fe3496b04ba066c10cbc
 product/lib64/libaptXHD_encoder.so|e13fa70c97caaa24d061678bdee608eb8850a69e
 
 # Camera
-lib/vendor.oneplus.camera.CameraMDMHIDL@1.0.so
-lib64/vendor.oneplus.camera.CameraMDMHIDL@1.0.so
+vendor/lib/vendor.oneplus.camera.CameraMDMHIDL@1.0.so
+vendor/lib/vendor.oneplus.hardware.translation@1.0.so
+vendor/lib/libyuv_watermark.so
+vendor/lib64/vendor.oneplus.camera.CameraMDMHIDL@1.0.so
+vendor/lib64/vendor.oneplus.hardware.translation@1.0.so
+vendor/lib64/libyuv_watermark.so
 vendor/bin/hw/vendor.oneplus.camera.CameraHIDL@1.0-service
 vendor/bin/vl53l1_daemon_main
 vendor/etc/camera/arccali.bin
