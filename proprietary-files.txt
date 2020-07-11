@@ -369,7 +369,6 @@ vendor/lib64/libtriplecam_video_optical_zoom.so
 vendor/lib64/libvidhance.so
 vendor/lib64/libvl53l1_daemon.so
 vendor/lib64/sensors.hal.tof.so
--app/priv-app/OnePlusCameraService/OnePlusCameraService.apk|ebcc0dce8222a355bf9caf1e8aa6be763e311d8a
 
 # Camera firmware
 vendor/firmware/CAMERA_ICP.elf
