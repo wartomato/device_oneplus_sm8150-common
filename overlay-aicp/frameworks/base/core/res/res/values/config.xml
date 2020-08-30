@@ -74,7 +74,7 @@
     <bool name="config_dual_LTE_capability">true</bool>
 
     <!-- Enable system navigation keys. -->
-    <bool name="config_supportSystemNavigationKeys">true</bool>
+    <bool name="config_supportSystemNavigationKeys">false</bool>
 
     <!-- Smart Pixels -->
     <bool name="config_enableSmartPixels">true</bool>
@@ -144,4 +144,8 @@
 
     <!-- FOD icon dim-->
     <bool name="config_targetUsesInKernelDimming">true</bool>
+
+    <!-- The default peak refresh rate for a given device. Change this value if you want to allow
+         for higher refresh rates to be automatically used out of the box -->
+    <integer name="config_defaultPeakRefreshRate">90</integer>
 </resources>
