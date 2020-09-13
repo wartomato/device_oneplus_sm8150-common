@@ -61,6 +61,21 @@
     <!-- Does the device have a notification/battery LED? -->
     <bool name="config_deviceHasLED">false</bool>
 
+
+    <!-- Is the notification LED intrusive? Used to decide if there should be a disable option -->
+    <bool name="config_intrusiveNotificationLed">false</bool>
+
+    <!-- Is the battery LED intrusive? Used to decide if there should be a disable option  -->
+    <bool name="config_intrusiveBatteryLed">false</bool>
+
+    <!-- Does device's LED supports fast charging ?  -->
+    <bool name="config_FastChargingLedSupported">false</bool>
+
+    <!-- Does the battery LED support multiple colors? Used to decide if the user can change the colors -->
+    <bool name="config_multiColorBatteryLed">false</bool>
+
+    <bool name="config_multiColorNotificationLed">false</bool>
+
     <!-- Boost the brightness on a triple press of the power button -->
     <integer name="config_triplePressOnPowerBehavior">2</integer>
 
