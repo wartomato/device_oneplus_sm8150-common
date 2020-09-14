@@ -600,6 +600,8 @@ void light_sensor_correction(sensors_event_t *ev) {
     // Sensor is not accurate for low values
     if (ev->light < correction) {
         ev->light = correction;
+    }
+
     free_screen_buffer();
 }
 
