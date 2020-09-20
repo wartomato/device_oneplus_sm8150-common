@@ -164,7 +164,7 @@
     <bool name="config_targetUsesInKernelDimming">true</bool>
 
     <!-- The default intensity level for haptic feedback on keyboard usage. -->
-    <bool name="config_enableHapticTextHandle">true</bool>
+    <!-- <bool name="config_enableHapticTextHandle">true</bool> -->
 
     <!-- The default intensity level for haptic feedback. See
          Settings.System.HAPTIC_FEEDBACK_INTENSITY more details on the constant values and
