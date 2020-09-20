@@ -261,9 +261,6 @@ on boot
     mkdir /data/vendor/sensors
     chown system system /data/vendor/sensors
 
-    #dynamic FPS display path
-    chown system system /sys/devices/platform/soc/ae00000.qcom,mdss_mdp/drm/card0/card0-DSI-1/dynamic_fps
-    chmod 0666 /sys/devices/platform/soc/ae00000.qcom,mdss_mdp/drm/card0/card0-DSI-1/dynamic_fps
 
 # msm specific files that need to be created on /data
 on post-fs-data
