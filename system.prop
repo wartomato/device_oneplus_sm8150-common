@@ -4,6 +4,7 @@ ro.apex.updatable=true
 # Audio
 audio.offload.min.duration.secs=30
 persist.vendor.audio.hac.enable=false
+persist.vendor.audio_hal.dsp_bit_width_enforce_mode=24
 ro.audio.monitorRotation=true
 
 # Bluetooth
@@ -47,7 +48,6 @@ ro.location.osnlp.region.package=
 
 # Graphics
 debug.sf.enable_hwc_vds=1
-vendor.display.enable_rotator_ui=1
 
 # HWUI
 ro.hwui.drop_shadow_cache_size=6
