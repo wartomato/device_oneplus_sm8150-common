@@ -102,6 +102,9 @@ ro.netflix.bsp_rev=Q855-16947-1
 # NFC
 ro.nfc.port=I2C
 
+# OTG
+persist.sys.oem.otg_support=true
+
 # Perf
 ro.vendor.qti.sys.fw.bg_apps_limit=60
 
