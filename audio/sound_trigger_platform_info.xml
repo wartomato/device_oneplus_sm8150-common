@@ -220,7 +220,7 @@
         <!-- OP_FEATURE_MM_SVA-->
         <param adm_cfg_profile="FLUENCE" />
         <!--param adm_cfg_profile="NONE" /-->
-        <!-- VENDOR_EDIT end-->
+        <!-- VENDOR_EDIT end-->  
         <!-- fluence_type: "FLUENCE", "FLUENCE_DMIC", "FLUENCE_TMIC"   -->
         <!-- "FLUENCE_QMIC". Param value is valid when adm_cfg_profile -->
         <!-- is one of FLUENCE, FLUENCE_STEREO, FFECNS values          -->
@@ -231,7 +231,7 @@
         <!-- OP_FEATURE_MM_SVA-->
         <param wdsp_fluence_type="FLUENCE" />
         <!--param wdsp_fluence_type="NONE" /-->
-        <!-- VENDOR_EDIT end-->
+        <!-- VENDOR_EDIT end--> 
         <gcs_usecase>
             <param uid="0x5" />
             <param acdb_devices="DEVICE_HANDSET_MIC_CPE, DEVICE_HANDSET_TMIC_CPE, DEVICE_HEADSET_MIC_CPE" />
