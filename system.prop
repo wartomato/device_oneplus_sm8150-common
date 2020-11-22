@@ -20,6 +20,7 @@ persist.camera.is_mode=4
 persist.vendor.camera.oissr.debug=1
 vendor.debug.camera.eisv2enable=1
 vendor.debug.camera.eisv3enable=1
+persist.sys.camera.preview.size=1920x1080
 
 # CNE
 persist.vendor.cne.feature=1
@@ -106,9 +107,6 @@ ro.netflix.bsp_rev=Q855-16947-1
 
 # NFC
 ro.nfc.port=I2C
-
-# OTG
-persist.sys.oem.otg_support=true
 
 # Perf
 ro.vendor.qti.sys.fw.bg_apps_limit=60
