@@ -71,3 +71,4 @@
 
 /sys/kernel/gpu(/.*)?                                              u:object_r:sysfs_info:s0
 /sys/class/power_supply/battery/temp                               u:object_r:sysfs_info:s0
+
