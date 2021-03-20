@@ -65,6 +65,7 @@ vendor/lib/hw/vendor.qti.hardware.audiohalext@1.0-impl.so
 vendor/lib/hw/vendor.qti.hardware.bluetooth_audio@2.0-impl.so
 vendor/lib/hw/vendor.qti.hardware.bluetooth_sar@1.0-impl.so
 vendor/lib/btaudio_offload_if.so
+vendor/lib/liba2dpoffload.so
 vendor/lib/libacdb-fts.so
 vendor/lib/libacdbloader.so
 vendor/lib/libacdbrtac.so
@@ -697,8 +698,8 @@ vendor/lib/hw/vendor.qti.gnss@3.0-impl.so
 vendor/lib/vendor.qti.gnss@3.0-service.so
 vendor/lib64/hw/vendor.qti.gnss@3.0-impl.so
 vendor/lib64/vendor.qti.gnss@3.0-service.so
-vendor/etc/vintf/manifest/vendor.qti.gnss@3.0-service.xml
-vendor/etc/vintf/manifest/android.hardware.gnss@2.0-service-qti.xml
+-vendor/etc/vintf/manifest/vendor.qti.gnss@3.0-service.xml
+-vendor/etc/vintf/manifest/android.hardware.gnss@2.0-service-qti.xml
 vendor/bin/garden_app
 vendor/bin/loc_launcher
 vendor/bin/lowi-server
@@ -1048,8 +1049,8 @@ vendor/lib64/libhexagon_nn_stub.so
 -app/NxpSecureElement/NxpSecureElement.apk
 etc/nfcee_access.xml
 etc/permissions/com.nxp.nfc.xml
-framework/com.nxp.nfc.jar
-lib64/libnxpnfc-nci.so
+framework/com.nxp.nfc.jar|9299477fdb0c87845d71c135eedd4ca1d3e6097c
+lib64/libnxpnfc-nci.so|ecbd274d2bb19552137b437360049b88395ebba0
 lib64/libnxpnfc_nci_jni.so
 vendor/bin/hw/android.hardware.nfc@1.2-service
 vendor/bin/hw/android.hardware.secure_element@1.1-service
@@ -1525,7 +1526,7 @@ vendor/lib/libthermalclient.so
 vendor/lib64/libthermalclient.so
 
 # Time services
--vendor/app/TimeService/TimeService.apk;PRESIGNED
+-vendor/app/TimeService/TimeService.apk
 vendor/bin/time_daemon
 vendor/lib64/libtime_genoff.so
 

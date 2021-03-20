@@ -99,10 +99,10 @@ PRODUCT_PACKAGES += \
 # Audio
 PRODUCT_PACKAGES += \
     android.hardware.audio@2.0-service \
-    android.hardware.audio@5.0-impl \
-    android.hardware.audio.effect@5.0-impl \
+    android.hardware.audio@6.0-impl \
+    android.hardware.audio.effect@6.0-impl \
     android.hardware.audio.common@2.0-util \
-    android.hardware.audio.common@5.0-util \
+    android.hardware.audio.common@6.0-util \
     android.hardware.soundtrigger@2.1-impl \
     android.hardware.bluetooth.audio@2.0-impl \
     audio.a2dp.default \
@@ -156,7 +156,6 @@ PRODUCT_PACKAGES_DEBUG += \
 
 # Bluetooth
 PRODUCT_PACKAGES += \
-    liba2dpoffload \
     libbthost_if \
     vendor.qti.hardware.bluetooth_audio@2.0.vendor
 
@@ -205,13 +204,17 @@ PRODUCT_PACKAGES += \
     init.recovery.qcom.rc \
     init.target.rc \
     kmemleak.sh \
-    ueventd.rc \
+    ueventd.qcom.rc \
     vendor.oem_ftm.rc \
     vendor.oem_ftm_svc_disable.rc \
 
 # Cryptfshw
 PRODUCT_PACKAGES += \
     vendor.qti.hardware.cryptfshw@1.0.vendor
+
+# Component overrides
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/component-overrides.xml:$(TARGET_COPY_OUT_VENDOR)/etc/sysconfig/component-overrides.xml
 
 # Display
 PRODUCT_PACKAGES += \
@@ -242,7 +245,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.drm@1.0-impl \
     android.hardware.drm@1.0-service \
-    android.hardware.drm@1.2-service.clearkey
+    android.hardware.drm@1.3-service.clearkey
 
 # Fingerprint
 PRODUCT_PACKAGES += \
@@ -277,7 +280,11 @@ PRODUCT_PACKAGES += \
     android.hidl.base@1.0 \
     android.hidl.base@1.0_system \
     android.hidl.manager@1.0 \
-    android.hidl.manager@1.0_system
+    android.hidl.manager@1.0_system \
+    libhidltransport \
+    libhidltransport.vendor \
+    libhwbinder \
+    libhwbinder.vendor
 
 # HotwordEnrollement app permissions
 PRODUCT_COPY_FILES += \
@@ -351,6 +358,7 @@ PRODUCT_PACKAGES += \
 
 # OMX
 PRODUCT_PACKAGES += \
+    libavservices_minijail_vendor \
     libc2dcolorconvert \
     libcodec2_hidl@1.0.vendor \
     libcodec2_vndk.vendor \
@@ -367,7 +375,12 @@ PRODUCT_PACKAGES += \
 
 # Power
 PRODUCT_PACKAGES += \
-    android.hardware.power@1.2-service-qti
+    android.hardware.power-service-qti
+
+# Protobuf
+PRODUCT_PACKAGES += \
+    libprotobuf-cpp-full-vendorcompat \
+    libprotobuf-cpp-lite-vendorcompat
 
 # QMI
 PRODUCT_PACKAGES += \
@@ -403,6 +416,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/seccomp/mediacodec-seccomp.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/mediacodec.policy \
     $(LOCAL_PATH)/seccomp/mediaextractor-seccomp.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/mediaextractor.policy \
+    $(LOCAL_PATH)/seccomp/codec2.vendor.base.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/codec2.vendor.base.policy \
     $(LOCAL_PATH)/seccomp/codec2.vendor.ext.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/codec2.vendor.ext.policy
 
 # Sensors
@@ -447,11 +461,9 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     textclassifier.bundle1
 
-# Thermal
+# AICP PartsBin
 PRODUCT_PACKAGES += \
-    android.hardware.thermal@1.0-impl \
-    android.hardware.thermal@1.0-service \
-    thermal.msmnile
+    PartsBin
 
 # AICP PartsBin
 PRODUCT_PACKAGES += \
@@ -484,6 +496,11 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/etc/permissions/com.oneplus.software.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/com.oneplus.software.xml \
     $(LOCAL_PATH)/configs/etc/permissions/com.oneplus.software.overseas.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/com.oneplus.software.overseas.xml
 
+# VNDK
+PRODUCT_COPY_FILES += \
+    prebuilts/vndk/v29/arm64/arch-arm-armv8-a/shared/vndk-sp/libcutils.so:$(TARGET_COPY_OUT_SYSTEM)/lib/libcutils-v29.so \
+    prebuilts/vndk/v29/arm64/arch-arm64-armv8-a/shared/vndk-sp/libcutils.so:$(TARGET_COPY_OUT_SYSTEM)/lib64/libcutils-v29.so
+
 # Wifi
 PRODUCT_PACKAGES += \
     android.hardware.wifi@1.0-service \
@@ -496,6 +513,7 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.wifi.supplicant@2.0.vendor \
     vendor.qti.hardware.wifi.supplicant@2.1.vendor \
     wifi-mac-generator \
+    WifiOverlay \
     wpa_supplicant \
     wpa_supplicant.conf
 
