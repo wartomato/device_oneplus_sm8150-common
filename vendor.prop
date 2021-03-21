@@ -11,9 +11,9 @@ persist.vendor.audio.fluence.voicerec=true
 persist.vendor.audio.ras.enabled=false
 persist.vendor.audio.voicecall.speaker.stereo=true
 ro.af.client_heap_size_kbyte=7168
+ro.audio.monitorRotation=true
 ro.config.media_vol_steps=25
 ro.config.vc_call_vol_steps=7
-ro.audio.monitorRotation=true
 ro.vendor.audio.sdk.fluencetype=fluence
 ro.vendor.audio.sdk.ssr=false
 vendor.audio.adm.buffering.ms=2
@@ -56,6 +56,9 @@ vendor.qcom.bluetooth.soc=cherokee
 # Certification
 ro.vendor.build.release_type=release
 ro.vendor.build.real.device=true
+
+# Charger
+ro.charger.enable_suspend=true
 
 # Crypto
 ro.crypto.allow_encrypt_override=true
