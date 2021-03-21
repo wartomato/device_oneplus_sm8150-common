@@ -259,7 +259,7 @@ PRODUCT_PACKAGES += \
     vendor.oneplus.hardware.display@1.0.vendor
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/etc/product/permissions/android.hardware.fod.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/android.hardware.fod.xml
+    $(LOCAL_PATH)/configs/etc/system/permissions/android.hardware.fod.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/android.hardware.fod.xml
 
 # For config.fs
 PRODUCT_PACKAGES += \
