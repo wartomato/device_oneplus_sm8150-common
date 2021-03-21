@@ -143,10 +143,6 @@ PRODUCT_COPY_FILES += \
     frameworks/av/services/audiopolicy/config/default_volume_tables.xml:$(TARGET_COPY_OUT_VENDOR)/etc/default_volume_tables.xml \
     frameworks/av/services/audiopolicy/config/r_submix_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/r_submix_audio_policy_configuration.xml
 
-#Dolby
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/etc/product/permissions/privapp-permissions-oem.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-oem.xml \
-
 # Boot control
 PRODUCT_PACKAGES += \
     android.hardware.boot@1.0-impl:64 \
@@ -259,7 +255,7 @@ PRODUCT_PACKAGES += \
     vendor.oneplus.hardware.display@1.0.vendor
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/etc/system/permissions/android.hardware.fod.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/android.hardware.fod.xml
+    $(LOCAL_PATH)/configs/etc/permissions/android.hardware.fod.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/android.hardware.fod.xml
 
 # For config.fs
 PRODUCT_PACKAGES += \
@@ -292,7 +288,7 @@ PRODUCT_PACKAGES += \
 
 # HotwordEnrollement app permissions
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/etc/product/permissions/privapp-permissions-hotword.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-hotword.xml
+    $(LOCAL_PATH)/configs/etc/permissions/privapp-permissions-hotword.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-hotword.xml
 
 # Input
 PRODUCT_COPY_FILES += \
@@ -459,16 +455,15 @@ PRODUCT_BOOT_JARS += \
     telephony-ext
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/etc/product/permissions/privapp-permissions-ims.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-ims.xml
-
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/etc/system/cdma_call_conf.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/cdma_call_conf.xml \
-    $(LOCAL_PATH)/configs/etc/system/spn-conf.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/spn-conf.xml
-
+    $(LOCAL_PATH)/configs/etc/permissions/privapp-permissions-ims.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-ims.xml
 
 # TextClassifier
 PRODUCT_PACKAGES += \
     textclassifier.bundle1
+
+# AICP PartsBin
+PRODUCT_PACKAGES += \
+    PartsBin
 
 # AICP PartsBin
 PRODUCT_PACKAGES += \
@@ -497,10 +492,9 @@ PRODUCT_PACKAGES += oneplus-mock
 PRODUCT_BOOT_JARS += oneplus-mock
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/etc/product/permissions/privapp-permissions-oem-system.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-oem-system.xml \
-    $(LOCAL_PATH)/configs/etc/system/permissions/privapp-permissions-oem-system.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-oem-system.xml \
-    $(LOCAL_PATH)/configs/etc/product/permissions/com.oneplus.software.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/com.oneplus.software.xml \
-    $(LOCAL_PATH)/configs/etc/product/permissions/com.oneplus.software.overseas.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/com.oneplus.software.overseas.xml
+    $(LOCAL_PATH)/configs/etc/permissions/privapp-permissions-oem-system.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-oem-system.xml \
+    $(LOCAL_PATH)/configs/etc/permissions/com.oneplus.software.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/com.oneplus.software.xml \
+    $(LOCAL_PATH)/configs/etc/permissions/com.oneplus.software.overseas.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/com.oneplus.software.overseas.xml
 
 # VNDK
 PRODUCT_COPY_FILES += \
@@ -536,4 +530,4 @@ PRODUCT_BOOT_JARS += \
     WfdCommon
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/etc/product/permissions/privapp-permissions-wfd.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-wfd.xml
+    $(LOCAL_PATH)/configs/etc/permissions/privapp-permissions-wfd.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-wfd.xml
