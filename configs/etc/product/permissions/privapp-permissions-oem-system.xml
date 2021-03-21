@@ -12,7 +12,6 @@
     <privapp-permissions package="com.oneplus.gallery">
         <permission name="android.permission.WRITE_SETTINGS"/>
         <permission name="android.permission.WRITE_MEDIA_STORAGE"/>
-    </privapp-permissions>
 
     <!-- Additional permissions on top of privapp-permissions-platform.xml -->
     <privapp-permissions package="com.gsma.rcs">
