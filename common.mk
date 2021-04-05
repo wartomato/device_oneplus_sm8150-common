@@ -307,10 +307,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/etc/msm_irqbalance.conf:$(TARGET_COPY_OUT_VENDOR)/etc/msm_irqbalance.conf
 
-# LiveDisplay
-PRODUCT_PACKAGES += \
-    vendor.lineage.livedisplay@2.0-service.oneplus_msmnile
-
 # Media
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/media_codecs.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs.xml \
@@ -478,8 +474,8 @@ PRODUCT_BOOT_JARS += oneplus-mock
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/etc/permissions/privapp-permissions-oem-system.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-oem-system.xml \
-    $(LOCAL_PATH)/configs/etc/permissions/com.oneplus.software.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/com.oneplus.software.xml \
-    $(LOCAL_PATH)/configs/etc/permissions/com.oneplus.software.overseas.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/com.oneplus.software.overseas.xml
+    $(LOCAL_PATH)/configs/etc/permissions/com.oneplus.software.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/com.oneplus.software.xml \
+    $(LOCAL_PATH)/configs/etc/permissions/com.oneplus.software.overseas.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/com.oneplus.software.overseas.xml
 
 # VNDK
 PRODUCT_COPY_FILES += \
