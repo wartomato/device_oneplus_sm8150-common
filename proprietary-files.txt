@@ -64,6 +64,7 @@ vendor/lib/libssrec.so
 vendor/lib/vendor.qti.hardware.audiohalext@1.0.so
 vendor/lib64/libadsprpc.so
 vendor/lib64/soundfx/libasphere.so
+vendor/lib64/soundfx/libhaptic_effect.so
 system_ext/etc/permissions/audiosphere.xml
 system_ext/framework/audiosphere.jar
 
