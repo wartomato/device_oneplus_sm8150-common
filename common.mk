@@ -76,6 +76,25 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.vulkan.deqp.level-2020-03-01.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.vulkan.deqp.level.xml \
     vendor/aicp/config/permissions/vendor.lineage.biometrics.fingerprint.inscreen.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/vendor.lineage.biometrics.fingerprint.inscreen.xml
 
+# Additional OEM / QTI / Vendor AOSP/ Google permissions
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/etc/permissions/android.software.live_wallpaper.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/android.software.live_wallpaper.xml \
+    $(LOCAL_PATH)/configs/etc/permissions/android.software.webview.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/android.software.webview.xml \
+    $(LOCAL_PATH)/configs/etc/permissions/com.oneplus.camera.service.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/com.oneplus.camera.service.xml \
+    $(LOCAL_PATH)/configs/etc/permissions/platform.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/platform.xml \
+    $(LOCAL_PATH)/configs/etc/permissions/com.android.carrierconfig.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/com.android.carrierconfig.xml \
+    $(LOCAL_PATH)/configs/etc/permissions/com.android.emergency.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/com.android.emergency.xml \
+    $(LOCAL_PATH)/configs/etc/permissions/com.android.settings.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/com.android.settings.xml \
+    $(LOCAL_PATH)/configs/etc/permissions/com.android.storagemanager.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/com.android.storagemanager.xml \
+    $(LOCAL_PATH)/configs/etc/permissions/com.android.systemui.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/com.android.systemui.xml \
+    $(LOCAL_PATH)/configs/etc/permissions/com.oem.feature.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/com.oem.feature.xml \
+    $(LOCAL_PATH)/configs/etc/permissions/privapp-permissions-oem-system_ext.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/privapp-permissions-oem-system_ext.xml \
+    $(LOCAL_PATH)/configs/etc/permissions/com.android.settings.intelligence.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/com.android.settings.intelligence.xml \
+    $(LOCAL_PATH)/configs/etc/permissions/default-permissions-google.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/default-permissions/default-permissions-google.xml \
+    $(LOCAL_PATH)/configs/etc/permissions/privapp-permissions-oem-product.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-oem-product.xml \
+    $(LOCAL_PATH)/configs/etc/permissions/privapp-permissions-softsim.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-softsim.xml \
+    $(LOCAL_PATH)/configs/etc/permissions/split-permissions-google.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/split-permissions-google.xml
+
 # ANT+
 PRODUCT_PACKAGES += \
     AntHalService-Soong \
@@ -123,7 +142,8 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio/sound_trigger_mixer_paths.xml:$(TARGET_COPY_OUT_VENDOR)/etc/sound_trigger_mixer_paths.xml \
     $(LOCAL_PATH)/audio/sound_trigger_mixer_paths_wcd9340.xml:$(TARGET_COPY_OUT_VENDOR)/etc/sound_trigger_mixer_paths_wcd9340.xml \
     $(LOCAL_PATH)/audio/sound_trigger_mixer_paths_wcd9340_qrd.xml:$(TARGET_COPY_OUT_VENDOR)/etc/sound_trigger_mixer_paths_wcd9340_qrd.xml \
-    $(LOCAL_PATH)/audio/sound_trigger_platform_info.xml:$(TARGET_COPY_OUT_VENDOR)/etc/sound_trigger_platform_info.xml
+    $(LOCAL_PATH)/audio/sound_trigger_platform_info.xml:$(TARGET_COPY_OUT_VENDOR)/etc/sound_trigger_platform_info.xml \
+    $(LOCAL_PATH)/audio/usb_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/usb_audio_policy_configuration.xml
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio/bluetooth_hearing_aid_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/bluetooth_hearing_aid_audio_policy_configuration.xml \
@@ -255,7 +275,7 @@ PRODUCT_PACKAGES += \
     vendor.oneplus.hardware.display@1.0.vendor
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/etc/permissions/android.hardware.fod.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/android.hardware.fod.xml
+    $(LOCAL_PATH)/configs/etc/permissions/android.hardware.fod.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/android.hardware.fod.xml \
 
 # For config.fs
 PRODUCT_PACKAGES += \
@@ -442,6 +462,10 @@ PRODUCT_BOOT_JARS += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/etc/permissions/privapp-permissions-qti.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/privapp-permissions-qti.xml
 
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/etc/voicemail-conf.xml:$(TARGET_COPY_OUT_VENDOR)/etc/voicemail-conf.xml \
+    $(LOCAL_PATH)/configs/etc/verizon-apns.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/verizon-apns.xml
+
 # AICP PartsBin
 PRODUCT_PACKAGES += \
     PartsBin
@@ -472,6 +496,28 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/etc/permissions/privapp-permissions-oem-system.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-oem-system.xml \
     $(LOCAL_PATH)/configs/etc/permissions/com.oneplus.software.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/com.oneplus.software.xml \
     $(LOCAL_PATH)/configs/etc/permissions/com.oneplus.software.overseas.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/com.oneplus.software.overseas.xml
+
+# Vendor / Google sysconfig
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/etc/sysconfig/google.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/sysconfig/google.xml \
+    $(LOCAL_PATH)/configs/etc/sysconfig/google-hiddenapi-package-allowlist.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/sysconfig/google-hiddenapi-package-allowlist.xml \
+    $(LOCAL_PATH)/configs/etc/sysconfig/google-rollback-package-whitelist.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/sysconfig/google-rollback-package-whitelist.xml \
+    $(LOCAL_PATH)/configs/etc/sysconfig/google-staged-installer-whitelist.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/sysconfig/google-staged-installer-whitelist.xml \
+    $(LOCAL_PATH)/configs/etc/sysconfig/google_dps.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/sysconfig/google_dps.xml \
+    $(LOCAL_PATH)/configs/etc/sysconfig/google_lens.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/sysconfig/google_lens.xml \
+    $(LOCAL_PATH)/configs/etc/sysconfig/google_smart_space.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/sysconfig/google_smart_space.xml \
+    $(LOCAL_PATH)/configs/etc/sysconfig/GoogleCellBroadcast_config.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/sysconfig/GoogleCellBroadcast_config.xml \
+    $(LOCAL_PATH)/configs/etc/sysconfig/oneplus.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/sysconfig/oneplus.xml \
+    $(LOCAL_PATH)/configs/etc/sysconfig/preinstalled-packages-platform-handheld-product.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/sysconfig/preinstalled-packages-platform-handheld-product.xml \
+    $(LOCAL_PATH)/configs/etc/sysconfig/preinstalled-packages-platform-overlays.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/sysconfig/preinstalled-packages-platform-overlays.xml \
+    $(LOCAL_PATH)/configs/etc/sysconfig/wellbeing.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/sysconfig/wellbeing.xml
+
+# Vibration
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/etc/excluded-input-devices.xml:$(TARGET_COPY_OUT_VENDOR)/etc/excluded-input-devices.xml \
+    $(LOCAL_PATH)/configs/etc/inputmethod_duration_map.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/inputmethod_duration_map.xml \
+    $(LOCAL_PATH)/configs/etc/vibrator_effect_map.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/vibrator_effect_map.xml \
+    $(LOCAL_PATH)/configs/etc/oneplus_short_vibration.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/oneplus_short_vibration.xml
 
 # VNDK
 PRODUCT_COPY_FILES += \
@@ -512,7 +558,7 @@ PRODUCT_BOOT_JARS += \
     WfdCommon
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/etc/permissions/privapp-permissions-wfd.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/privapp-permissions-wfd.xml
+    $(LOCAL_PATH)/configs/etc/permissions/wfd-system-ext-privapp-permissions-qti.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/wfd-system-ext-privapp-permissions-qti.xml
 
 # Surfaceflinger
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
