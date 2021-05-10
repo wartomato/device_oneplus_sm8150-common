@@ -2,21 +2,11 @@
   {
     "repository":  "Claymore1297/proprietary_vendor_oneplus",
     "target_path": "vendor/oneplus",
-    "branch":      "r11.0"
+    "branch":      "r11.1"
   },
   {
     "repository":  "AICP/kernel_oneplus_sm8150",
     "target_path": "kernel/oneplus/sm8150",
-    "branch":      "r11.1"
-  },
-  {
-    "repository":  "AICP/packages_apps_PartsBin",
-    "target_path": "packages/apps/PartsBin",
-    "branch":      "r11.10"
-  },
-  {
-    "repository":  "AICP/packages_resources_deviceparts",
-    "target_path": "packages/resources/deviceparts",
     "branch":      "r11.1"
   },
   {
