@@ -176,6 +176,9 @@ persist.vendor.radio.rat_on=combine
 persist.vendor.radio.sib16_support=1
 persist.vendor.radio.uicc_se_enabled=false
 
+# Seamless transfer
+sys.fflag.override.settings_seamless_transfer=true
+
 # SurfaceFlinger
 ro.surface_flinger.has_wide_color_display=true
 ro.surface_flinger.has_HDR_display=true
