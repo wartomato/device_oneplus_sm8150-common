@@ -17,7 +17,7 @@
 -->
 <resources>
     <!-- Path to the library that contain device specific key handler -->
-    <string name="config_customKeyHandlerLib" translatable="false">/system/priv-app/PartsBin/PartsBin.apk</string>
+    <string name="config_customKeyHandlerLib" translatable="false">/system_ext/priv-app/PartsBin/PartsBin.apk</string>
 
     <!-- Name of the key handler class -->
     <string name="config_customKeyHandlerClass" translatable="false">com.aicp.device.KeyHandler</string>
