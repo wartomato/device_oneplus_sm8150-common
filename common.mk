@@ -225,6 +225,7 @@ PRODUCT_PACKAGES += \
     libdisplayconfig.qti \
     libdisplayconfig.system.qti \
     libqdMetaData \
+    libqdMetaData.system \
     libtinyxml \
     libvulkan \
     memtrack.msmnile \
