@@ -71,10 +71,10 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.device_id_attestation.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.device_id_attestation.xml \
     frameworks/native/data/etc/android.software.ipsec_tunnels.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.ipsec_tunnels.xml \
     frameworks/native/data/etc/android.software.midi.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.midi.xml \
+    frameworks/native/data/etc/android.software.opengles.deqp.level-2020-03-01.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.opengles.deqp.level.xml \
     frameworks/native/data/etc/android.software.sip.voip.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.sip.voip.xml \
     frameworks/native/data/etc/android.software.verified_boot.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.verified_boot.xml \
-    frameworks/native/data/etc/android.software.vulkan.deqp.level-2020-03-01.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.vulkan.deqp.level.xml \
-    vendor/aicp/config/permissions/vendor.lineage.biometrics.fingerprint.inscreen.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/vendor.lineage.biometrics.fingerprint.inscreen.xml
+    frameworks/native/data/etc/android.software.vulkan.deqp.level-2020-03-01.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.vulkan.deqp.level.xml
 
 # Additional OEM / QTI / Vendor AOSP/ Google permissions
 PRODUCT_COPY_FILES += \
@@ -116,7 +116,6 @@ PRODUCT_PACKAGES += \
     libqcomvoiceprocessing \
     libsndmonitor \
     libspkrprot \
-    libssrec \
     libtinycompress \
     libvolumelistener \
     tinymix
@@ -144,6 +143,10 @@ PRODUCT_COPY_FILES += \
     frameworks/av/services/audiopolicy/config/default_volume_tables.xml:$(TARGET_COPY_OUT_VENDOR)/etc/default_volume_tables.xml \
     frameworks/av/services/audiopolicy/config/r_submix_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/r_submix_audio_policy_configuration.xml
 
+# Authsecret
+PRODUCT_PACKAGES += \
+    android.hardware.authsecret@1.0.vendor
+
 # Boot control
 PRODUCT_PACKAGES += \
     android.hardware.boot@1.0-impl:64 \
@@ -157,6 +160,7 @@ PRODUCT_PACKAGES_DEBUG += \
 
 # Bluetooth
 PRODUCT_PACKAGES += \
+    android.hardware.bluetooth@1.0.vendor \
     liba2dpoffload \
     libbthost_if \
     vendor.qti.hardware.bluetooth_audio@2.0.vendor \
@@ -219,7 +223,7 @@ PRODUCT_PACKAGES += \
     gralloc.msmnile \
     hwcomposer.msmnile \
     libdisplayconfig.qti \
-    libdisplayconfig.qti.vendor \
+    libdisplayconfig.system.qti \
     libqdMetaData \
     libtinyxml \
     libvulkan \
@@ -250,7 +254,8 @@ PRODUCT_PACKAGES += \
 
 # DRM
 PRODUCT_PACKAGES += \
-    android.hardware.drm@1.3-service.clearkey
+    android.hardware.drm@1.3.vendor \
+    android.hardware.drm@1.4-service.clearkey
 
 # fastbootd
 PRODUCT_PACKAGES += \
@@ -258,15 +263,19 @@ PRODUCT_PACKAGES += \
 
 # Fingerprint
 PRODUCT_PACKAGES += \
-    android.hardware.biometrics.fingerprint@2.1-service.oneplus_msmnile \
-    vendor.lineage.biometrics.fingerprint.inscreen@1.0-service.oneplus_msmnile \
-    vendor.oneplus.fingerprint.extension@1.0.vendor \
-    vendor.oneplus.hardware.display@1.0.vendor
+    android.hardware.biometrics.fingerprint@2.3-service.oneplus \
+    vendor.goodix.hardware.biometrics.fingerprint@2.1.vendor
 
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/etc/permissions/android.hardware.fod.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/android.hardware.fod.xml
+# Gatekeeper
+PRODUCT_PACKAGES += \
+    android.hardware.gatekeeper@1.0.vendor
 
 # GPS
+PRODUCT_PACKAGES += \
+    android.hardware.gnss.measurement_corrections@1.1.vendor \
+    android.hardware.gnss.visibility_control@1.0.vendor \
+    android.hardware.gnss@2.1.vendor
+
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/etc/gps/apdr.conf:$(TARGET_COPY_OUT_VENDOR)/etc/apdr.conf \
     $(LOCAL_PATH)/configs/etc/gps/flp.conf:$(TARGET_COPY_OUT_VENDOR)/etc/flp.conf \
@@ -313,6 +322,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/etc/msm_irqbalance.conf:$(TARGET_COPY_OUT_VENDOR)/etc/msm_irqbalance.conf
 
+# Keymaster
+PRODUCT_PACKAGES += \
+    android.hardware.keymaster@4.1.vendor
+
 # Media
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/etc/media/media_codecs.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs.xml \
@@ -329,19 +342,19 @@ PRODUCT_COPY_FILES += \
 
 # Net
 PRODUCT_PACKAGES += \
+    android.system.net.netd@1.1.vendor \
     netutils-wrapper-1.0
+
+# Neural networks
+PRODUCT_PACKAGES += \
+    android.hardware.neuralnetworks@1.3.vendor
 
 # NFC
 PRODUCT_PACKAGES += \
-    android.hardware.nfc@1.0:64 \
-    android.hardware.nfc@1.1:64 \
-    android.hardware.nfc@1.2:64 \
-    android.hardware.secure_element@1.0:64 \
-    android.hardware.secure_element@1.1:64 \
+    android.hardware.nfc@1.2.vendor \
     com.android.nfc_extras \
-    Tag \
-    vendor.nxp.nxpese@1.0:64 \
-    vendor.nxp.nxpnfc@1.0:64
+    NfcNci \
+    Tag
 
 # OMX
 PRODUCT_PACKAGES += \
@@ -364,14 +377,15 @@ PRODUCT_PACKAGES += \
 
 # OnePlus
 PRODUCT_PACKAGES += \
-    oneplus-fwk.oneplus_msmnile
+    oneplus-fwk
 
 PRODUCT_BOOT_JARS += \
-    oneplus-fwk.oneplus_msmnile
+    oneplus-fwk
 
 # Power
 PRODUCT_PACKAGES += \
     android.hardware.power-service-qti \
+    android.hardware.power@1.2.vendor \
     vendor.qti.hardware.perf@2.2.vendor
 
 # QMI
@@ -383,8 +397,12 @@ PRODUCT_PACKAGES += \
 # RIL
 PRODUCT_PACKAGES += \
     android.hardware.radio@1.2 \
+    android.hardware.radio@1.5.vendor \
     android.hardware.radio.config@1.0 \
+    android.hardware.radio.config@1.2.vendor \
+    android.hardware.radio.deprecated@1.0.vendor \
     android.hardware.secure_element@1.0 \
+    android.hardware.secure_element@1.2.vendor \
     libprotobuf-cpp-full \
     libril_shim \
     librmnetctl \
@@ -396,7 +414,7 @@ PRODUCT_PACKAGES += \
 
 # Vibrator
 PRODUCT_PACKAGES += \
-    vendor.qti.hardware.vibrator.service.oneplus_msmnile
+    vendor.qti.hardware.vibrator.service.oneplus
 
 PRODUCT_COPY_FILES += \
     vendor/qcom/opensource/vibrator/excluded-input-devices.xml:$(TARGET_COPY_OUT_VENDOR)/etc/excluded-input-devices.xml
@@ -408,6 +426,7 @@ PRODUCT_COPY_FILES += \
 # Sensors
 PRODUCT_PACKAGES += \
     als_correction_service.oneplus_msmnile \
+    android.hardware.audio@4.0.vendor \
     android.hardware.sensors@2.0-service.oneplus_msmnile \
     libsensorndkbridge
 
