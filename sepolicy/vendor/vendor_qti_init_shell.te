@@ -9,3 +9,12 @@ get_prop(vendor_qti_init_shell, vendor_memplus_prop)
 
 # Allow vendor_qti_init_shell to get vendor_oem_dump_prop
 set_prop(vendor_qti_init_shell, vendor_oem_dump_prop)
+
+# Allow vendor_qti_init_shell to set the stop property in property services
+allow vendor_qti_init_shell ctl_stop_prop:property_service set;
+
+# Allow vendor_qti_init_shell to write to kmsg_device (kernel messages)
+allow vendor_qti_init_shell kmsg_device:chr_file write;
+
+# Allow vendor_qti_init_shell to write to sysfs
+allow vendor_qti_init_shell sysfs:file write;
