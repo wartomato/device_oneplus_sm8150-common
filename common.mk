@@ -383,10 +383,10 @@ PRODUCT_PACKAGES += \
 
 # OnePlus
 PRODUCT_PACKAGES += \
-    oneplus-fwk
+    oneplus-fwk.oneplus_msmnile
 
 PRODUCT_BOOT_JARS += \
-    oneplus-fwk
+    oneplus-fwk.oneplus_msmnile
 
 # Power
 PRODUCT_PACKAGES += \
@@ -420,7 +420,7 @@ PRODUCT_PACKAGES += \
 
 # Vibrator
 PRODUCT_PACKAGES += \
-    vendor.qti.hardware.vibrator.service.oneplus
+    vendor.qti.hardware.vibrator.service.oneplus_msmnile
 
 PRODUCT_COPY_FILES += \
     vendor/qcom/opensource/vibrator/excluded-input-devices.xml:$(TARGET_COPY_OUT_VENDOR)/etc/excluded-input-devices.xml
