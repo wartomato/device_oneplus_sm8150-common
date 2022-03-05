@@ -382,11 +382,8 @@ PRODUCT_PACKAGES += \
     libstagefrighthw
 
 # OnePlus
-PRODUCT_PACKAGES += \
-    oneplus-fwk.oneplus_msmnile
-
-PRODUCT_BOOT_JARS += \
-    oneplus-fwk.oneplus_msmnile
+PRODUCT_PACKAGES += oneplus-fwk
+PRODUCT_BOOT_JARS += oneplus-fwk
 
 # Power
 PRODUCT_PACKAGES += \
