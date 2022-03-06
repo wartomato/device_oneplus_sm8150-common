@@ -19,8 +19,6 @@ DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay-aicp
 
 PRODUCT_ENFORCE_RRO_TARGETS := *
-PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += \
-    $(LOCAL_PATH)/overlay-aicp/packages/apps/Snap
 
 # A/B
 AB_OTA_POSTINSTALL_CONFIG += \
@@ -286,11 +284,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/etc/gps/sap.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sap.conf \
     $(LOCAL_PATH)/configs/etc/gps/xtwifi.conf:$(TARGET_COPY_OUT_VENDOR)/etc/xtwifi.conf
 
-PRODUCT_PACKAGES += \
-    android.hardware.gnss.measurement_corrections@1.1.vendor \
-    android.hardware.gnss.visibility_control@1.0.vendor \
-    android.hardware.gnss@2.1.vendor
-
 # Health
 PRODUCT_PACKAGES += \
     android.hardware.health@2.1-impl \
@@ -417,7 +410,7 @@ PRODUCT_PACKAGES += \
 
 # Vibrator
 PRODUCT_PACKAGES += \
-    vendor.qti.hardware.vibrator.service.oneplus_msmnile
+    vendor.qti.hardware.vibrator.service.oneplus
 
 PRODUCT_COPY_FILES += \
     vendor/qcom/opensource/vibrator/excluded-input-devices.xml:$(TARGET_COPY_OUT_VENDOR)/etc/excluded-input-devices.xml
