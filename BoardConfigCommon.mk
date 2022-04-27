@@ -91,7 +91,7 @@ TARGET_CAMERA_NEEDS_CLIENT_INFO := true
 BOARD_GLOBAL_CFLAGS += -DBATTERY_REAL_INFO
 
 # Fingerprintsensor
-TARGET_SURFACEFLINGER_UDFPS_LIB := //hardware/oneplus:libudfps_extension.oneplus
+TARGET_SURFACEFLINGER_UDFPS_LIB := //device/oneplus/common:libudfps_extension.oneplus
 TARGET_USES_FOD_ZPOS := true
 TARGET_FOD_ZPOS := 0x20000000u
 SOONG_CONFIG_UDFPS_ZPOS := $(TARGET_FOD_ZPOS)
