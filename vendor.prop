@@ -123,6 +123,8 @@ persist.backup.ntpServer=0.pool.ntp.org
 
 # Graphics
 debug.egl.hw=0
+debug.hwui.use_hint_manager=true
+debug.hwui.target_cpu_time_percent=30
 debug.mdpcomp.logs=0
 debug.sf.hw=0
 debug.sf.latch_unsignaled=1
