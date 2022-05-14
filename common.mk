@@ -178,6 +178,10 @@ PRODUCT_PACKAGES += \
     vendor.oneplus.camera.CameraHIDL@1.0.vendor \
     vendor.qti.hardware.camera.device@1.0.vendor
 
+# Charge control
+PRODUCT_PACKAGES += \
+    vendor.lineage.chgctrl@1.0-service.oneplus
+
 # Common init scripts
 PRODUCT_PACKAGES += \
     ftm_power_config.sh \
