@@ -438,8 +438,8 @@ on post-fs-data
     chmod 0644 /sys/class/power_supply/bms/charge_full_design
     chown system system /sys/class/power_supply/bms/charge_now_raw
     chmod 0644 /sys/class/power_supply/bms/charge_now_raw
-    chown system system /sys/class/power_supply/bms/cycle_count
-    chmod 0644 /sys/class/power_supply/bms/cycle_count
+    chown system system /sys/class/power_supply/bms/cycle_counts
+    chmod 0644 /sys/class/power_supply/bms/cycle_counts
     chown system system /sys/class/power_supply/bms/charge_counter
     chmod 0644 /sys/class/power_supply/bms/charge_counter
     chown system system /sys/class/power_supply/bms/battery_health
