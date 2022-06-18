@@ -13,4 +13,3 @@ allow system_server untrusted_app:process getattr;
 allow system_server untrusted_app_25:process getattr;
 allow system_server untrusted_app_27:process getattr;
 allow system_server untrusted_app_29:process getattr;
-allow system_server vendor_qtidataservices_app:process getattr;
