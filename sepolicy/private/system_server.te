@@ -2,6 +2,7 @@ allow system_server lineage_data_file:file r_file_perms;
 allow system_server sysfs_motor:file { w_file_perms getattr };
 
 allow system_server audioserver:process getattr;
+allow system_server cameraserver:process getattr;
 allow system_server gmscore_app:process getattr;
 allow system_server mediaprovider_app:process getattr;
 allow system_server mediaserver:process getattr;
