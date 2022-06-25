@@ -8,3 +8,7 @@ allow system_server vendor_camera_prop:file { read open getattr map };
 
 # Battery
 r_dir_file(system_server, sysfs_battery_supply)
+
+# QTI services
+allow system_server vendor_qtelephony:process { getattr };
+allow system_server vendor_qtidataservices_app:process { getattr };
