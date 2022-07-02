@@ -64,6 +64,7 @@ vendor/lib/libqtigef.so
 vendor/lib/libssrec.so
 vendor/lib/vendor.qti.hardware.audiohalext@1.0.so
 vendor/lib64/libadsprpc.so
+vendor/lib64/libqtigef.so
 
 # Bluetooth
 vendor/bin/hw/android.hardware.bluetooth@1.0-service-qti
@@ -281,11 +282,17 @@ vendor/lib64/vendor.display.color@1.5.so
 vendor/lib64/vendor.display.postproc@1.0.so
 
 # DMS
--system_ext/app/OPSoundTuner/OPSoundTuner.apk|4c3c86a7a2984165c76b687c7582eebe8ba109cc
+system/lib64/vendor.dolby.hardware.dms@2.0.so
+-system_ext/priv-app/DaxUI/DaxUI.apk|89e8ceabb19458b872eed0560a627eb2ff4c4dc4
 -system_ext/priv-app/daxService/daxService.apk
 odm/etc/dolby/dax-default.xml
 odm/etc/media_codecs_dolby_audio.xml
 system_ext/etc/permissions/com.dolby.daxservice.xml
+system_ext/etc/permissions/privapp-com.dolby.daxappui.xml
+system_ext/etc/permissions/privapp-com.dolby.daxservice.xml
+system_ext/etc/sysconfig/config-com.dolby.daxappui.xml
+system_ext/etc/sysconfig/config-com.dolby.daxservice.xml
+system_ext/etc/sysconfig/hiddenapi-com.dolby.daxservice.xml
 vendor/bin/hw/vendor.dolby.hardware.dms@2.0-service
 vendor/etc/init/vendor.dolby.hardware.dms@2.0-service.rc
 vendor/lib/libdapparamstorage.so
@@ -304,6 +311,10 @@ vendor/lib64/soundfx/libswdap.so
 vendor/lib64/soundfx/libswgamedap.so
 vendor/lib64/vendor.dolby.hardware.dms@2.0-impl.so
 vendor/lib64/vendor.dolby.hardware.dms@2.0.so
+
+# DMS (libswvqe) - from OnePlus8Oxygen_15.I.20_GLO_020_2008080048
+vendor/lib/soundfx/libswvqe.so|076a2d0d002b2ab044b9879ff6b82f79ada5caed
+vendor/lib64/soundfx/libswvqe.so|fa4082e95c001742746d29c6f76442086e2c9880
 
 # DPM
 system/framework/tcmclient.jar
