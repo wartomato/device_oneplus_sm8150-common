@@ -199,7 +199,7 @@
     <bool name="config_carrier_wfc_ims_available">true</bool>
 
     <!-- Screen brightness when dozing -->
-    <integer name="config_screenBrightnessDoze">27</integer>
+    <integer name="config_screenBrightnessDoze">21</integer>
 
     <!-- Enable SMS authorization framework. -->
     <bool name="config_sms_authorization_enabled">true</bool>
@@ -235,7 +235,7 @@
     <bool name="config_displayBlanksAfterDoze">true</bool>
 
     <!-- Allow automatic adjusting of the screen brightness while dozing in low power state. -->
-    <bool name="config_allowAutoBrightnessWhileDozing">true</bool>
+    <bool name="config_allowAutoBrightnessWhileDozing">false</bool>
 
     <!-- Power Management: Specifies whether to decouple the auto-suspend state of the
          device from the display on/off state.
