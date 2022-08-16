@@ -94,7 +94,7 @@
     <bool name="config_supportSystemNavigationKeys">false</bool>
 
     <!-- Smart Pixels -->
-    <bool name="config_enableSmartPixels">false</bool>
+    <bool name="config_enableSmartPixels">true</bool>
 
     <!-- Does the device supports Smart Battery -->
     <bool name="config_smart_battery_available">true</bool>
