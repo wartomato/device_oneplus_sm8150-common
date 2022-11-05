@@ -1,2 +1,0 @@
-# OTA with encrypted f2fs userdata partition
-allow uncrypt self:capability sys_admin;

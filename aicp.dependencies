@@ -1,17 +1,17 @@
 [
   {
-    "repository":  "AICP/kernel_oneplus_sm8150",
-    "target_path": "kernel/oneplus/sm8150",
-    "branch":      "s12.1"
+    "repository": "AICP/hardware_oplus",
+    "target_path": "hardware/oplus"
+    "branch":      "t13.0"
   },
   {
-    "repository":  "AICP/device_oneplus_settings",
-    "target_path": "device/oneplus/settings",
-    "branch":      "s12.1"
+    "repository": "AICP/kernel_oneplus_sm8150",
+    "target_path": "kernel/oneplus/sm8150"
+    "branch":      "t13.0"
   },
   {
-    "repository":  "AICP/device_oneplus_common",
-    "target_path": "device/oneplus/common",
-    "branch":      "s12.1"
+    "repository": "TheMuppets/proprietary_vendor_oneplus_sm8150-common",
+    "target_path": "vendor/oneplus/sm8150-common",
+    "branch":      "lineage-20"
   }
 ]

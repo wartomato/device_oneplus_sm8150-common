@@ -1,17 +1,7 @@
 /*
  * Copyright (c) 2019 The LineageOS Project
  *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
+ * SPDX-License-Identifier: Apache-2.0
  */
 
 package org.lineageos.camerahelper;
@@ -28,13 +18,13 @@ public class CameraMotorController {
 
     // Camera motor paths
     private static final String CAMERA_MOTOR_ENABLE_PATH =
-            "/sys/devices/platform/vendor/vendor:motor_pl/enable";
+            "/sys/class/motor/enable";
     public static final String CAMERA_MOTOR_HALL_CALIBRATION =
-            "/sys/devices/platform/vendor/vendor:motor_pl/hall_calibration";
+            "/sys/class/motor/hall_calibration";
     private static final String CAMERA_MOTOR_DIRECTION_PATH =
-            "/sys/devices/platform/vendor/vendor:motor_pl/direction";
+            "/sys/class/motor/direction";
     private static final String CAMERA_MOTOR_POSITION_PATH =
-            "/sys/devices/platform/vendor/vendor:motor_pl/position";
+            "/sys/class/motor/position";
 
     // Motor calibration data path
     public static final String CAMERA_PERSIST_HALL_CALIBRATION =

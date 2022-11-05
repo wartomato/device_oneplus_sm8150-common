@@ -1,19 +1,5 @@
-genfscon proc /brightness_for_sensor u:object_r:proc_sensor:s0
-genfscon proc /dc_for_sensor u:object_r:proc_sensor:s0
-genfscon proc /fresh_rate_for_sensor u:object_r:proc_sensor:s0
-genfscon proc /touchpanel u:object_r:proc_touchpanel:s0
-genfscon proc /ultrasound u:object_r:proc_ultrasound:s0
+# Motor
+genfscon sysfs /class/motor    u:object_r:sysfs_motor:s0
 
-genfscon sysfs /devices/platform/soc/89c000.i2c/i2c-2/2-005a/leds/vibrator u:object_r:sysfs_vibrator:s0
-genfscon sysfs /devices/platform/soc/ae00000.qcom,mdss_mdp/drm/card0/card0-DSI-1/aod u:object_r:sysfs_aod:s0
-genfscon sysfs /devices/platform/soc/ae00000.qcom,mdss_mdp/drm/card0/card0-DSI-1/aod_disable u:object_r:sysfs_aod:s0
-genfscon sysfs /devices/platform/soc/ae00000.qcom,mdss_mdp/drm/card0/card0-DSI-1/auth_status u:object_r:sysfs_fod:s0
-genfscon sysfs /devices/platform/soc/ae00000.qcom,mdss_mdp/drm/card0/card0-DSI-1/dim_alpha u:object_r:sysfs_fod:s0
-genfscon sysfs /devices/platform/soc/ae00000.qcom,mdss_mdp/drm/card0/card0-DSI-1/notify_aod u:object_r:sysfs_aod:s0
-genfscon sysfs /devices/platform/soc/ae00000.qcom,mdss_mdp/drm/card0/card0-DSI-1/notify_dim u:object_r:sysfs_fod:s0
-genfscon sysfs /devices/platform/soc/ae00000.qcom,mdss_mdp/drm/card0/card0-DSI-1/notify_fppress u:object_r:sysfs_fod:s0
-genfscon sysfs /devices/platform/soc/ae00000.qcom,mdss_mdp/drm/card0/card0-DSI-1/cancel_status u:object_r:sysfs_fod:s0
-genfscon sysfs /devices/platform/soc/ae00000.qcom,mdss_mdp/drm/card0/card0-DSI-1/power_status u:object_r:sysfs_fod:s0
-genfscon sysfs /devices/platform/vendor/vendor:infrared_pl u:object_r:vendor_sysfs_sensors:s0
-genfscon sysfs /devices/virtual/fastrpc/adsprpc-smd-secure/wakeup u:object_r:sysfs_wakeup:s0
-genfscon sysfs /devices/virtual/fastrpc/adsprpc-smd/wakeup u:object_r:sysfs_wakeup:s0
+# USB
+genfscon sysfs /devices/platform/soc/a600000.ssusb/usb_data_enabled    u:object_r:vendor_sysfs_usb_data_enabled:s0

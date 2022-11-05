@@ -1,3 +1,0 @@
-#allow chargecontrol to access sysfs battery
-allow hal_chargecontrol_default vendor_sysfs_battery_supply:dir search;
-allow hal_chargecontrol_default vendor_sysfs_battery_supply:file rw_file_perms;
