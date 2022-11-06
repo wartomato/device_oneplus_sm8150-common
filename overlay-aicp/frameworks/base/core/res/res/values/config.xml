@@ -175,10 +175,12 @@
       /sys/class/power_supply/battery/fastchg_status
     </string-array>
 
+    <!-- Whether prop imitation is enabled -->
+    <bool name="config_enablePropImitation">true</bool>
+
     <!-- Model from a certified device -->
     <string name="config_certifiedModel" translatable="false">Pixel 4 XL</string>
 
     <!-- Fingerprint from a certified device against current platform SPL level -->
     <string name="config_certifiedFingerprint" translatable="false">google/coral/coral:13/TP1A.221005.002/9012097:user/release-keys</string>
 </resources>
-
