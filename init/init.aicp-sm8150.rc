@@ -24,18 +24,15 @@ on boot
     chown system system /sys/kernel/gpu/gpu_busy
     chmod 0664 /sys/kernel/gpu/gpu_busy
 
-    # Touchscreen and gestures
-#    chown system system /proc/touchpanel/single_tap_enable
-#    chmod 0660 /proc/touchpanel/single_tap_enable
+    # Touchscreen tap gestures
+    chown system system /proc/touchpanel/single_tap_enable
+    chmod 0660 /proc/touchpanel/single_tap_enable
 
-#    chown system system /proc/touchpanel/double_tap_enable
-#    chmod 0660 /proc/touchpanel/double_tap_enable
-
-#    # Pocket judge sysfs permissions
-#    chown system system /sys/kernel/pocket_judge/inpocket
-#    chmod 0664 /sys/kernel/pocket_judge/inpocket
+    chown system system /proc/touchpanel/double_tap_enable
+    chmod 0660 /proc/touchpanel/double_tap_enable
 
 on post-fs
 
     # Vibrator
     chown system system /sys/devices/platform/soc/89c000.i2c/i2c-2/2-005a/leds/vibrator/level
+    chmod 0666 /sys/devices/platform/soc/89c000.i2c/i2c-2/2-005a/leds/vibrator/level
