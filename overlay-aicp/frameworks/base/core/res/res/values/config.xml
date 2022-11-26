@@ -31,8 +31,7 @@
     <!-- Control the behavior when the user presses the power and volume up buttons together.
             0 - Nothing
             1 - Mute toggle
-            2 - Global actions menu
-    -->
+            2 - Global actions menu -->
     <integer name="config_keyChordPowerVolumeUp">1</integer>
 
     <!-- If this is true, long press on power button will be available from the non-interactive state -->
@@ -143,16 +142,6 @@
 
     <!-- Allow automatic adjusting of the screen brightness while dozing in low power state. -->
     <bool name="config_allowAutoBrightnessWhileDozing">true</bool>
-
-    <!-- Defines the sysfs attribute path used by pocket bridge
-         to communicate pocket state to the pocket judge kernel driver. -->
-         <!-- <string name="config_pocketBridgeSysfsInpocket"></string> -->
-
-    <!-- Pocket Lock -->
-    <bool name="config_pocketModeSupported">true</bool>
-
-    <!-- Defines custom OEM sensor for pocket detection. -->
-    <string name="config_pocketJudgeVendorSensorName">oneplus.sensor.pocket</string>
 
     <!-- Set this to true to enable the platform's auto-power-save modes like doze and
          app standby.  These are not enabled by default because they require a standard
