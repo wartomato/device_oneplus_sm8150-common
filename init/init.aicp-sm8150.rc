@@ -6,17 +6,45 @@
 
 on boot
 
+    # DC-Dimming
+    chown system system /sys/kernel/oplus_display/dimlayer_bl_en
+    chmod 0666 /sys/kernel/oplus_display/dimlayer_bl_en
+
+    # Dynamic FPS display path
+    chown system graphics /sys/class/drm/sde-crtc-0/dynamic_fps
+    chmod 0666 /sys/class/drm/sde-crtc-0/dynamic_fps
+
     # FPS measurement
-    chown system graphics /sys/devices/platform/soc/ae00000.qcom,mdss_mdp/drm/card0/sde-crtc-0/measured_fps
-    chmod 0666 /sys/devices/platform/soc/ae00000.qcom,mdss_mdp/drm/card0/sde-crtc-0/measured_fps
+    chown system graphics /sys/class/drm/sde-crtc-0/measured_fps
+    chmod 0666 /sys/class/drm/sde-crtc-0/measured_fps
 
-    #dynamic FPS display path
-    chown system system /sys/devices/platform/soc/ae00000.qcom,mdss_mdp/drm/card0/card0-DSI-1/dynamic_fps
-    chmod 0666 /sys/devices/platform/soc/ae00000.qcom,mdss_mdp/drm/card0/card0-DSI-1/dynamic_fps
+    # Fsync Switch
+    chown system system /sys/module/sync/parameters/fsync_enabled
+    chmod 0666 /sys/module/sync/parameters/fsync_enabled
 
-    # USB Fastcharge
-    chown system system /sys/kernel/fast_charge/force_fast_charge
-    chmod 0664 /sys/kernel/fast_charge/force_fast_charge
+    # HBM
+    chown system system /sys/kernel/oplus_display/hbm
+    chmod 0666 /sys/kernel/oplus_display/hbm
+
+    # Kcal
+    chown system graphics /sys/module/msm_drm/parameters/kcal_red
+    chmod 0666 /sys/module/msm_drm/parameters/kcal_red
+    chown system graphics /sys/module/msm_drm/parameters/kcal_green
+    chmod 0666 /sys/module/msm_drm/parameters/kcal_green
+    chown system graphics /sys/module/msm_drm/parameters/kcal_blue
+    chmod 0666 /sys/module/msm_drm/parameters/kcal_blue
+    chown system graphics /sys/module/msm_drm/parameters/kcal_sat
+    chmod 0666 /sys/module/msm_drm/parameters/kcal_sat
+    chown system graphics /sys/module/msm_drm/parameters/kcal_hue
+    chmod 0666 /sys/module/msm_drm/parameters/kcal_hue
+    chown system graphics /sys/module/msm_drm/parameters/kcal_val
+    chmod 0666 /sys/module/msm_drm/parameters/kcal_val
+    chown system graphics /sys/module/msm_drm/parameters/kcal_cont
+    chmod 0666 /sys/module/msm_drm/parameters/kcal_cont
+
+    # Power Efficient Workqueue
+    chown system system /sys/module/workqueue/parameters/power_efficient
+    chmod 0666 /sys/module/workqueue/parameters/power_efficient
 
     # System GPU Info
     chown system system /sys/kernel/gpu/clock_mhz
@@ -27,9 +55,12 @@ on boot
     # Touchscreen tap gestures
     chown system system /proc/touchpanel/single_tap_enable
     chmod 0660 /proc/touchpanel/single_tap_enable
-
     chown system system /proc/touchpanel/double_tap_enable
     chmod 0660 /proc/touchpanel/double_tap_enable
+
+    # USB Fastcharge
+    chown system system /sys/kernel/fast_charge/force_fast_charge
+    chmod 0664 /sys/kernel/fast_charge/force_fast_charge
 
 on post-fs
 
