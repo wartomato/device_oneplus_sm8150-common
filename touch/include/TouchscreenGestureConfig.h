@@ -26,7 +26,7 @@ namespace implementation {
 
 const int TouchscreenGesture::kSupportedGestures =
         makeBitField(kGestureUpVee, kGestureLeftVee, kGestureRightVee, kGestureCircle,
-                     kGestureLeftToRight, kGestureRightToLeft, kGestureUpToDown, kGestureDownToUp,
+                     kGestureDoubleSwipe, kGestureUpToDown,
                      kGestureM, kGestureW, kGestureSingleTap, kGestureS);
 
 }  // namespace implementation
