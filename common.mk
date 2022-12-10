@@ -323,6 +323,15 @@ PRODUCT_PACKAGES += \
     OPlusFrameworksResCommon \
     OPlusSystemUIResCommon
 
+# Oplus Features
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/system_ext/etc/permissions/oneplus-features.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/oneplus-features.xml \
+    $(LOCAL_PATH)/configs/system_ext/etc/permissions/oplus-feature-font-op-sans.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/oplus-feature-font-op-sans.xml \
+    $(LOCAL_PATH)/configs/system_ext/etc/permissions/oplus-feature-game-space-tool-box.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/oplus-feature-game-space-tool-box.xml \
+    $(LOCAL_PATH)/configs/system_ext/etc/permissions/oplus-feature-mdm-packages.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/oplus-feature-mdm-packages.xml \
+    $(LOCAL_PATH)/configs/system_ext/etc/permissions/oplus-feature-systemui-listen-state-from-playstore.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/oplus-feature-systemui-listen-state-from-playstore.xml \
+    $(LOCAL_PATH)/configs/system_ext/etc/permissions/oplus.system.features_multimedia.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/oplus.system.features_multimedia.xml
+
 # Power
 PRODUCT_PACKAGES += \
     android.hardware.power-service-qti \
