@@ -221,9 +221,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     ih8sn
 
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/ih8sn.conf:$(TARGET_COPY_OUT_SYSTEM)/etc/ih8sn.conf
-
 # IPACM
 PRODUCT_PACKAGES += \
     ipacm \
