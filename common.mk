@@ -125,7 +125,8 @@ PRODUCT_COPY_FILES += \
 
 # Device init scripts
  PRODUCT_PACKAGES += \
-    init.aicp-sm8150.rc
+    init.aicp-sm8150.rc \
+    init.oplus.hw.rc
 
 # Display
 PRODUCT_PACKAGES += \
