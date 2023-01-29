@@ -218,10 +218,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/privapp-permissions-hotword.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-hotword.xml
 
-# ih8sn
-PRODUCT_PACKAGES += \
-    ih8sn
-
 # IPACM
 PRODUCT_PACKAGES += \
     ipacm \
@@ -385,8 +381,7 @@ PRODUCT_PACKAGES += \
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
-    hardware/oplus \
-    vendor/ih8sn
+    hardware/oplus
 
 # Telephony
 PRODUCT_PACKAGES += \
