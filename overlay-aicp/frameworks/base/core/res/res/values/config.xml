@@ -17,17 +17,6 @@
         <item>com.android.touch.gestures.KeyHandler</item>
     </string-array>
 
-    <!-- Whether device has physical alert slider.-->
-    <bool name="config_hasAlertSlider">true</bool>
-
-    <!-- Whether key handler sends intent when changing slider position-->
-    <string name="config_alertSliderIntent">com.aicp.oplus.OplusParts.UPDATE_SLIDER_POSITION</string>
-
-    <!-- The location of the devices physical tri state switch
-         0: Left side
-         1: Right side -->
-    <integer name="config_alertSliderLocation">1</integer>
-
     <!-- Control the behavior when the user presses the power and volume up buttons together.
             0 - Nothing
             1 - Mute toggle
