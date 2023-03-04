@@ -315,8 +315,7 @@ PRODUCT_PACKAGES += \
     CarrierConfigResCommon \
     FrameworksResTarget \
     OPlusFrameworksResCommon \
-    OPlusSystemUIResCommon \
-    OPlusPartsResCommon
+    OPlusSystemUIResCommon
 
 # Oplus Features
 PRODUCT_COPY_FILES += \
