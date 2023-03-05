@@ -3,6 +3,14 @@
 // SPDX-License-Identifier: Apache-2.0
 //
 
+
+prebuilt_etc {
+    name: "init.aicp-sm8150.rc",
+    src: "init.aicp-sm8150.rc",
+    sub_dir: "init",
+    device_specific: true,
+}
+
 prebuilt_etc {
     name: "init.qcom.rc",
     src: "init.qcom.rc",
@@ -75,11 +83,3 @@ sh_binary {
     src: "init.qcom.sh",
     vendor: true,
 }
-
-prebuilt_etc {
-    name: "init.aicp-sm8150.rc",
-    src: "init.aicp-sm8150.rc",
-    sub_dir: "init",
-    device_specific: true,
-}
-

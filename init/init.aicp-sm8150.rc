@@ -6,6 +6,10 @@
 
 on boot
 
+    # Smart charging input suspend node
+    chown system system /sys/class/power_supply/battery/input_suspend
+    chmod 0666 /sys/class/power_supply/battery/input_suspend
+
     # DC-Dimming
     chown system system /sys/kernel/oplus_display/dimlayer_bl_en
     chmod 0666 /sys/kernel/oplus_display/dimlayer_bl_en
@@ -59,5 +63,5 @@ on boot
 on post-fs
 
     # Vibrator
-    chown system system /sys/class/leds/vibrator/level
-    chmod 0666 /sys/class/leds/vibrator/level
+    chown system system /sys/devices/platform/soc/89c000.i2c/i2c-2/2-005a/leds/vibrator/level
+    chmod 0666 /sys/devices/platform/soc/89c000.i2c/i2c-2/2-005a/leds/vibrator/level
