@@ -11,6 +11,9 @@
     <!-- Whether to show or hide sensitive info (like IMEI and Phone Number) on About phone -->
     <bool name="configShowDeviceSensitiveInfo">true</bool>
 
+    <!-- Whether to show custom screen resolution settings -->
+    <bool name="config_show_custom_screen_resolution_switch">true</bool>
+
     <!-- Whether to show min / max refresh rate preference in display settings -->
     <bool name="config_show_refresh_rate_switch">true</bool>
 
