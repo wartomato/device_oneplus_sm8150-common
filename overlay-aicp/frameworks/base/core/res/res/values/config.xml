@@ -125,13 +125,11 @@
     <!-- Whether prop imitation is enabled -->
     <bool name="config_enablePropImitation">true</bool>
 
-    <!-- Build properties from a GMS certified device against current platform SPL level -->
-    <string-array name="config_certifiedBuildProperties" translatable="false">
-        <item>raven</item>   <!-- Build.DEVICE -->
-        <item>raven</item>   <!-- Build.PRODUCT -->
-        <item>Pixel 6 Pro</item> <!-- Build.MODEL -->
-        <item>google/raven/raven:13/TQ1A.230205.002/9471150:user/release-keys</item> <!-- Build.FINGERPRINT -->
-    </string-array>
+    <!-- Model from a certified device -->
+    <string name="config_certifiedModel" translatable="false">Pixel 2</string>
+
+    <!-- Fingerprint from a certified device against current platform SPL level -->
+    <string name="config_certifiedFingerprint" translatable="false">google/walleye/walleye:8.1.0/OPM1.171019.011/4448085:user/release-keys</string>
 
     <!-- The list of package IDs that are not allowed to use aux cameras. -->
     <string-array name="config_cameraAuxPackageExcludeList" translatable="false">
