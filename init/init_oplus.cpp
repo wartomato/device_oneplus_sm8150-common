@@ -33,52 +33,52 @@ void OverrideProperty(const char* name, const char* value) {
  * after the original property has been set.
  */
 void vendor_load_properties() {
-    auto device = GetProperty("ro.product.product.device", "");
+    auto device = GetProperty("ro.product.system.device", "");
     auto rf_version = std::stoi(GetProperty("ro.boot.rf_version", "0"));
 
     switch (rf_version) {
         case 1: // CN
             if (device == "OnePlus7") {
-                OverrideProperty("ro.product.product.model", "GM1900");
+                OverrideProperty("ro.product.system.model", "GM1900");
             } else if (device == "OnePlus7Pro") {
-                OverrideProperty("ro.product.product.model", "GM1910");
+                OverrideProperty("ro.product.system.model", "GM1910");
             } else if (device == "OnePlus7T") {
-                OverrideProperty("ro.product.product.model", "HD1900");
+                OverrideProperty("ro.product.system.model", "HD1900");
             } else if (device == "OnePlus7TPro") {
-                OverrideProperty("ro.product.product.model", "HD1910");
+                OverrideProperty("ro.product.system.model", "HD1910");
             }
             break;
         case 3: // IN
             if (device == "OnePlus7") {
-                OverrideProperty("ro.product.product.model", "GM1901");
+                OverrideProperty("ro.product.system.model", "GM1901");
             } else if (device == "OnePlus7Pro") {
-                OverrideProperty("ro.product.product.model", "GM1911");
+                OverrideProperty("ro.product.system.model", "GM1911");
             } else if (device == "OnePlus7T") {
-                OverrideProperty("ro.product.product.model", "HD1901");
+                OverrideProperty("ro.product.system.model", "HD1901");
             } else if (device == "OnePlus7TPro") {
-                OverrideProperty("ro.product.product.model", "HD1911");
+                OverrideProperty("ro.product.system.model", "HD1911");
             }
             break;
         case 4: // EU
             if (device == "OnePlus7") {
-                OverrideProperty("ro.product.product.model", "GM1903");
+                OverrideProperty("ro.product.system.model", "GM1903");
             } else if (device == "OnePlus7Pro") {
-                OverrideProperty("ro.product.product.model", "GM1913");
+                OverrideProperty("ro.product.system.model", "GM1913");
             } else if (device == "OnePlus7T") {
-                OverrideProperty("ro.product.product.model", "HD1903");
+                OverrideProperty("ro.product.system.model", "HD1903");
             } else if (device == "OnePlus7TPro") {
-                OverrideProperty("ro.product.product.model", "HD1913");
+                OverrideProperty("ro.product.system.model", "HD1913");
             }
             break;
         case 5: // NA
             if (device == "OnePlus7") {
-                OverrideProperty("ro.product.product.model", "GM1907");
+                OverrideProperty("ro.product.system.model", "GM1907");
             } else if (device == "OnePlus7Pro") {
-                OverrideProperty("ro.product.product.model", "GM1917");
+                OverrideProperty("ro.product.system.model", "GM1917");
             } else if (device == "OnePlus7T") {
-                OverrideProperty("ro.product.product.model", "HD1907");
+                OverrideProperty("ro.product.system.model", "HD1907");
             } else if (device == "OnePlus7TPro") {
-                OverrideProperty("ro.product.product.model", "HD1917");
+                OverrideProperty("ro.product.system.model", "HD1917");
             }
             break;
         default:
