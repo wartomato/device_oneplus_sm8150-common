@@ -43,9 +43,6 @@
          2: gestures only for back, home and overview -->
     <integer name="config_navBarInteractionMode">2</integer>
 
-    <!-- Default state for LiveDisplay -->
-    <bool name="config_liveDisplayAvailable">true</bool>
-
     <!-- Paths to OP warp charging status file -->
     <string name="config_opWarpChargerStatusPaths" translatable="false">/sys/devices/virtual/oplus_chg/battery/voocchg_ing</string>
 
@@ -143,3 +140,4 @@
         <item>us.zoom.videomeetings</item>
     </string-array>
 </resources>
+
