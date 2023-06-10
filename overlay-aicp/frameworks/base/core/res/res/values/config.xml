@@ -127,10 +127,10 @@
 
     <!-- Build properties from a GMS certified device against current platform SPL level -->
     <string-array name="config_certifiedBuildProperties" translatable="false">
-        <item>raven</item>   <!-- Build.DEVICE -->
-        <item>raven</item>   <!-- Build.PRODUCT -->
-        <item>Pixel 6 Pro</item> <!-- Build.MODEL -->
-        <item>google/raven/raven:13/TQ1A.230205.002/9471150:user/release-keys</item> <!-- Build.FINGERPRINT -->
+        <item>walleye</item>   <!-- Build.DEVICE -->
+        <item>walleye</item>   <!-- Build.PRODUCT -->
+        <item>Pixel 2</item> <!-- Build.MODEL -->
+        <item>google/walleye/walleye:8.1.0/OPM1.171019.011/4448085:user/release-keys</item> <!-- Build.FINGERPRINT -->
     </string-array>
 
     <!-- The list of package IDs that are not allowed to use aux cameras. -->
