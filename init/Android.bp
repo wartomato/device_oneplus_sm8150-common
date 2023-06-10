@@ -3,7 +3,6 @@
 // SPDX-License-Identifier: Apache-2.0
 //
 
-
 prebuilt_etc {
     name: "init.aicp-sm8150.rc",
     src: "init.aicp-sm8150.rc",
