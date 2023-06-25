@@ -261,9 +261,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.keymaster@4.1.vendor
 
-# Lineage Health
+# Lineage ChargeControl
 PRODUCT_PACKAGES += \
-    vendor.lineage.health-service.default
+    vendor.lineage.chgctrl@1.0-service.oneplus
 
 # LiveDisplay
 PRODUCT_PACKAGES += \
