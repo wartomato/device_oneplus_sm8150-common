@@ -243,7 +243,7 @@ PRODUCT_PACKAGES += \
     ueventd.qcom.rc
 
 # Init scripts (device specific)
- PRODUCT_PACKAGES += \
+PRODUCT_PACKAGES += \
     init.aicp-sm8150.rc \
     init.oplus.hw.rc
 
