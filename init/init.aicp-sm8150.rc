@@ -15,42 +15,42 @@ on boot
     #chmod 0666 /sys/kernel/oplus_display/dimlayer_bl_en
 
     # FPS measurement
-    chown system graphics /sys/class/drm/sde-crtc-0/measured_fps
-    chmod 0666 /sys/class/drm/sde-crtc-0/measured_fps
+    #chown system graphics /sys/class/drm/sde-crtc-0/measured_fps
+    #chmod 0666 /sys/class/drm/sde-crtc-0/measured_fps
 
     # HBM
     #chown system system /sys/kernel/oplus_display/hbm
     #chmod 0666 /sys/kernel/oplus_display/hbm
 
     # Kcal
-    chown system graphics /sys/module/msm_drm/parameters/kcal_red
-    chmod 0666 /sys/module/msm_drm/parameters/kcal_red
-    chown system graphics /sys/module/msm_drm/parameters/kcal_green
-    chmod 0666 /sys/module/msm_drm/parameters/kcal_green
-    chown system graphics /sys/module/msm_drm/parameters/kcal_blue
-    chmod 0666 /sys/module/msm_drm/parameters/kcal_blue
-    chown system graphics /sys/module/msm_drm/parameters/kcal_sat
-    chmod 0666 /sys/module/msm_drm/parameters/kcal_sat
-    chown system graphics /sys/module/msm_drm/parameters/kcal_hue
-    chmod 0666 /sys/module/msm_drm/parameters/kcal_hue
-    chown system graphics /sys/module/msm_drm/parameters/kcal_val
-    chmod 0666 /sys/module/msm_drm/parameters/kcal_val
-    chown system graphics /sys/module/msm_drm/parameters/kcal_cont
-    chmod 0666 /sys/module/msm_drm/parameters/kcal_cont
+    #chown system graphics /sys/module/msm_drm/parameters/kcal_red
+    #chmod 0666 /sys/module/msm_drm/parameters/kcal_red
+    #chown system graphics /sys/module/msm_drm/parameters/kcal_green
+    #chmod 0666 /sys/module/msm_drm/parameters/kcal_green
+    #chown system graphics /sys/module/msm_drm/parameters/kcal_blue
+    #chmod 0666 /sys/module/msm_drm/parameters/kcal_blue
+    #chown system graphics /sys/module/msm_drm/parameters/kcal_sat
+    #chmod 0666 /sys/module/msm_drm/parameters/kcal_sat
+    #chown system graphics /sys/module/msm_drm/parameters/kcal_hue
+    #chmod 0666 /sys/module/msm_drm/parameters/kcal_hue
+    #chown system graphics /sys/module/msm_drm/parameters/kcal_val
+    #chmod 0666 /sys/module/msm_drm/parameters/kcal_val
+    #chown system graphics /sys/module/msm_drm/parameters/kcal_cont
+    #chmod 0666 /sys/module/msm_drm/parameters/kcal_cont
 
     # Power Efficient Workqueue
-    chown system system /sys/module/workqueue/parameters/power_efficient
-    chmod 0666 /sys/module/workqueue/parameters/power_efficient
+    #chown system system /sys/module/workqueue/parameters/power_efficient
+    #chmod 0666 /sys/module/workqueue/parameters/power_efficient
 
     # System GPU Info
-    chown system system /sys/kernel/gpu/gpu_clock
-    chmod 0664 /sys/kernel/gpu/gpu_clock
-    chown system system /sys/kernel/gpu/gpu_busy
-    chmod 0664 /sys/kernel/gpu/gpu_busy
+    #chown system system /sys/kernel/gpu/gpu_clock
+    #chmod 0664 /sys/kernel/gpu/gpu_clock
+    #chown system system /sys/kernel/gpu/gpu_busy
+    #chmod 0664 /sys/kernel/gpu/gpu_busy
 
     # Touchscreen tap gestures
-    chown system system /proc/touchpanel/double_tap_enable
-    chmod 0660 /proc/touchpanel/double_tap_enable
+    #chown system system /proc/touchpanel/double_tap_enable
+    #chmod 0660 /proc/touchpanel/double_tap_enable
 
     # USB Fastcharge
     chown system system /sys/module/oplus_charger/parameters/force_fast_charge
