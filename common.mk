@@ -19,6 +19,11 @@ PRODUCT_PACKAGES += \
     OplusParts \
     tri-state-key-calibrate
 
+# Dex/ART optimization
+PRODUCT_ART_TARGET_INCLUDE_DEBUG_BUILD := false
+PRODUCT_DEX_PREOPT_DEFAULT_COMPILER_FILTER := everything
+USE_DEX2OAT_DEBUG := false
+
 # ANT+
 PRODUCT_PACKAGES += \
     AntHalService-Soong \
