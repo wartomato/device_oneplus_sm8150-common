@@ -10,7 +10,6 @@
 #include <binder/ProcessState.h>
 #include <hidl/HidlTransportSupport.h>
 #include <livedisplay/oplus/AntiFlicker.h>
-#include <livedisplay/oplus/SunlightEnhancement.h>
 #include <livedisplay/sdm/PictureAdjustment.h>
 #include <vendor/lineage/livedisplay/2.1/IPictureAdjustment.h>
 
@@ -27,10 +26,8 @@ using ::vendor::lineage::livedisplay::V2_0::sdm::SDMController;
 using ::vendor::lineage::livedisplay::V2_1::IAntiFlicker;
 using ::vendor::lineage::livedisplay::V2_1::IDisplayModes;
 using ::vendor::lineage::livedisplay::V2_1::IPictureAdjustment;
-using ::vendor::lineage::livedisplay::V2_1::ISunlightEnhancement;
 using ::vendor::lineage::livedisplay::V2_1::implementation::AntiFlicker;
 using ::vendor::lineage::livedisplay::V2_1::implementation::DisplayModes;
-using ::vendor::lineage::livedisplay::V2_1::implementation::SunlightEnhancement;
 
 int main() {
     status_t status = OK;
@@ -43,7 +40,6 @@ int main() {
     sp<IAntiFlicker> af = new AntiFlicker();
     sp<DisplayModes> dm = new DisplayModes(controller);
     sp<PictureAdjustment> pa = new PictureAdjustment(controller);
-    sp<SunlightEnhancement> se = new SunlightEnhancement();
 
     configureRpcThreadpool(1, true /*callerWillJoin*/);
 
@@ -64,13 +60,6 @@ int main() {
     status = pa->registerAsService();
     if (status != OK) {
         LOG(ERROR) << "Could not register service for LiveDisplay HAL PictureAdjustment Iface ("
-                   << status << ")";
-        goto shutdown;
-    }
-
-    status = se->registerAsService();
-    if (status != OK) {
-        LOG(ERROR) << "Could not register service for LiveDisplay HAL SunlightEnhancement Iface ("
                    << status << ")";
         goto shutdown;
     }
