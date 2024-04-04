@@ -20,13 +20,13 @@
     <!-- Whether device has physical alert slider.-->
     <bool name="config_hasAlertSlider">true</bool>
 
+    <!-- Whether key handler sends intent when changing slider position-->
+    <string name="config_alertSliderIntent">com.aicp.oplus.OplusParts.UPDATE_SLIDER_POSITION</string>
+
     <!-- The location of the devices physical tri state switch
          0: Left side
          1: Right side -->
     <integer name="config_alertSliderLocation">1</integer>
-
-    <!-- Whether key handler sends intent when changing slider position-->
-    <string name="config_alertSliderIntent">com.aicp.oplus.OplusParts.UPDATE_SLIDER_POSITION</string>
 
     <!-- Control the behavior when the user presses the power and volume up buttons together.
             0 - Nothing
@@ -127,10 +127,10 @@
 
     <!-- Build properties from a GMS certified device against current platform SPL level -->
     <string-array name="config_certifiedBuildProperties" translatable="false">
-        <item>walleye</item>   <!-- Build.DEVICE -->
-        <item>walleye</item>   <!-- Build.PRODUCT -->
-        <item>Pixel 2</item> <!-- Build.MODEL -->
-        <item>google/walleye/walleye:8.1.0/OPM1.171019.011/4448085:user/release-keys</item> <!-- Build.FINGERPRINT -->
+        <item>bullhead</item>   <!-- Build.DEVICE -->
+        <item>bullhead</item>   <!-- Build.PRODUCT -->
+        <item>Nexus 5X</item>   <!-- Build.MODEL -->
+        <item>google/bullhead/bullhead:8.0.0/OPR6.170623.013/4283548:user/release-keys</item> <!-- Build.FINGERPRINT -->
     </string-array>
 
     <!-- The list of package IDs that are not allowed to use aux cameras. -->
