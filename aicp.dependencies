@@ -10,12 +10,5 @@
     "repository":  "AICP/kernel_oneplus_sm8150",
     "target_path": "kernel/oneplus/sm8150",
     "branch":      "t13.0"
-  },
-  {
-    "remote":      "gitlab",
-    "repository":  "the-muppets/proprietary_vendor_firmware",
-    "target_path": "vendor/firmware",
-    "clone-depth": "1",
-    "branch":      "lineage-20"
-   }
+  }
 ]
