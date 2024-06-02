@@ -1,2 +1,5 @@
 # USB
 type vendor_sysfs_usb_data_enabled, fs_type, sysfs_type;
+
+# sysfs
+type sysfs_tri_state_key, sysfs_type, fs_type;
